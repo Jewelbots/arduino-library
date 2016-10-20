@@ -1,5 +1,4 @@
 #include "button_handler.h"
-#include "SEGGER_RTT.h"
 #include "app_button.h"
 #include "app_timer.h"
 #include "bootloader_types.h"
