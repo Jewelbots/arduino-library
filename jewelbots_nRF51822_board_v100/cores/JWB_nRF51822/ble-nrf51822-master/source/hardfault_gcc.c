@@ -1,5 +1,5 @@
 #include "nrf_log.h"
-#include "nrf_common.h"
+#include "nordic_common.h"
 #include <stdint.h>
 
 void hard_fault_handler_c(unsigned int *hardfault_args, unsigned lr_value) {
