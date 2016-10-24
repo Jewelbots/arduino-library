@@ -1,4 +1,4 @@
-x#ifndef ARDUINO_H_
+#ifndef ARDUINO_H_
 #define ARDUINO_H_
 
 #include <stdint.h>
