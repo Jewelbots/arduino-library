@@ -27,7 +27,7 @@ compiler.ar.flags=rcs
 # Combine to create elf file options
 compiler.c.elf.cmd=arm-none-eabi-gcc
 compiler.c.elf.flags=-mcpu=cortex-m0 -mthumb
-compiler.ldflags=--specs=nano.specs -lgcc -lc -lnosys
+compiler.ldflags=--specs=nano.specs
 
 # Create bin file options
 compiler.elf2bin.cmd=arm-none-eabi-objcopy
