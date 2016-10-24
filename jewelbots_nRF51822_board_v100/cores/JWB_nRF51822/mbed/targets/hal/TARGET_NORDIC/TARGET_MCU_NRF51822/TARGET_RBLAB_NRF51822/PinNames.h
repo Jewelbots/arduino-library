@@ -106,10 +106,10 @@ typedef enum {
     BUTTON1 = p26,
     BUTTON2 = p25,
 
-    RX_PIN_NUMBER = p24,
-    TX_PIN_NUMBER = p21,
-    CTS_PIN_NUMBER = p23,
-    RTS_PIN_NUMBER = p22,
+  //  RX_PIN_NUMBER = p24,
+  //  TX_PIN_NUMBER = p21,
+//    CTS_PIN_NUMBER = p23,
+//    RTS_PIN_NUMBER = p22,
 
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,
