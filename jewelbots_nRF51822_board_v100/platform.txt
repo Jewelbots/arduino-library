@@ -10,7 +10,7 @@ compiler.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
 
 # Compile s files options
 compiler.S.cmd=arm-none-eabi-as
-compiler.S.flags=-mcpu=cortex-m0 -mthumb assembler-with-cpp
+compiler.S.flags=-mcpu=cortex-m0 -mthumb
 
 # Compile c files options
 compiler.c.cmd=arm-none-eabi-gcc
