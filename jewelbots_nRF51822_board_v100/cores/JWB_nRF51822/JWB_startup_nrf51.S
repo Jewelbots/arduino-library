@@ -143,7 +143,7 @@ Reset_Handler:
  *      __data_start__: VMA of start of the section to copy to.
  *      __data_start__/__data_end__: RAM address range that data should be
  *      copied to. Both must be aligned to 4 bytes boundary.  */
- 
+
     ldr r1, =__etext
     ldr r2, =__data_start__
     ldr r3, =__data_end__
@@ -151,13 +151,13 @@ Reset_Handler:
     subs r3, r2
     ble .LC0
 
-.L_C1:
+.LC1:
     subs r3, 4
     ldr r0, [r1,r3]
     str r0, [r2,r3]
-    bgt .L_C1
+    bgt .LC1
 
-.L_C0:
+.LC0:
 
     LDR     R0, =SystemInit
     BLX     R0
