@@ -1,6 +1,6 @@
 /* Linker script to configure memory regions. */
 
-/*SEARCH_DIR(.)*/
+SEARCH_DIR(.)
 GROUP(-lgcc -lc -lnosys)
 
 MEMORY

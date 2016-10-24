@@ -46,7 +46,7 @@
 #include "led_sequence.h"
 #include "pmic_driver.h"
 #include "scan.h"
-#include "arduino.h"
+#include "Arduino.h"
 
 
 #define UART_TX_BUF_SIZE                                                       \
