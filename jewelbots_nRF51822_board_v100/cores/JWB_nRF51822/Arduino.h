@@ -6,7 +6,6 @@
 #include <string.h>
 #include <math.h>
 
-#include <avr/pgmspace.h>
 
 #include "mbed.h"
 /* sketch */
