@@ -17,6 +17,7 @@
 #define MBED_PINNAMES_H
 
 #include "cmsis.h"
+#include "jewelbot_gpio.h"
 
 #ifdef __cplusplus
 extern "C" {
