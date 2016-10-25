@@ -14,7 +14,7 @@ compiler.S.flags=-mcpu=cortex-m0 -mthumb
 
 # Compile c files options
 compiler.c.cmd=arm-none-eabi-gcc
-compiler.c.flags=-c -g -Os -w -mcpu=cortex-m0 -mthumb -mabi=aapcs --std=gnu99 -Wall -Werror -O3 -mfloat-abi=soft -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums -DSOFTDEVICE_PRESENT -DNRF51 -DS130 -DBLE_STACK_SUPPORT_REQD -DREAL_JEWELBOT
+compiler.c.flags=-c -g -Os -w -std=gnu99 -fno-common -fmessage-length=0 -Wall -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -nostdlib --param max-inline-insns-single=500 -DSOFTDEVICE_PRESENT -DNRF51 -DS130 -DBLE_STACK_SUPPORT_REQD -DREAL_JEWELBOT
 
 # Compile cpp files options
 compiler.cpp.cmd=arm-none-eabi-g++
