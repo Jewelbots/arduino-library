@@ -48,6 +48,7 @@
 #include "scan.h"
 #include "Arduino.h"
 
+#define ARDUINO_MAIN
 
 #define UART_TX_BUF_SIZE                                                       \
   256 /**< Size of the UART TX buffer, in bytes. Must be a power of two. */
@@ -174,7 +175,7 @@ nrf_drv_wdt_channel_id m_channel_id;
 void wdt_event_handler(void) {
   // LEDS_OFF(LEDS_MASK);
 }
-int main(void) {
+int __attribute__ ((weak)) main(void) {
 	bool  app_dfu = (NRF_POWER->GPREGRET == BOOTLOADER_DFU_END);
 
 	if (app_dfu)
