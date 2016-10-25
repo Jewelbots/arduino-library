@@ -215,11 +215,11 @@ int main(void) {
   err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
   APP_ERROR_CHECK(err_code);
   NRF_LOG("Exited bootup. Starting main loop.\r\n");
-  setup();
+  //setup();
   for (;;) {
     demo_run();
     app_sched_execute();
-    loop();
+    //loop();
 #ifndef RTT
     ret_code_t err_code = sd_app_evt_wait();
     APP_ERROR_CHECK(err_code);
