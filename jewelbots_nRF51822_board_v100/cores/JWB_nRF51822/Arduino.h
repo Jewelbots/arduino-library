@@ -6,4 +6,9 @@
 #include <string.h>
 #include <math.h>
 
+
+/* sketch */
+extern void setup( void ) ;
+extern void loop( void ) ;
+
 #endif
