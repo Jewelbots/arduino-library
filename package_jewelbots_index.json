@@ -15,7 +15,7 @@
                     "version": "1.0.0",
                     "category": "Jewelbots",
                     "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_board_v100.tar.gz",
-                    "archiveFileName": "jewelbots_nrf51822_board_v100.tar.gz",
+                    "archiveFileName": "jewelbots_nRF51822_board_v100.tar.gz",
                     "size": "3100000",
                     "boards":
                     [
