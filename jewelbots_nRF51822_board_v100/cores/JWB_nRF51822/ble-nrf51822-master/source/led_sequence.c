@@ -36,7 +36,7 @@ uint8_t color_values[];
 extern void on(uint8_t number, char *color, uint8_t length)  {
   enable_led();
   clear_led();
-  color_values();
+  color_lookup(color);
   set_led_state_handler({number, color_values[0], color_values[1], color_values[2], 1});
   nrf_delay_us(length);
   clear_led();
