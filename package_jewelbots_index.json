@@ -10,7 +10,7 @@
             "platforms":
             [
                 {
-                    "name": "Jewelbots nRF51822 Boards (32-bit ARM Cortex-M0)",
+                    "name": "Jewelbots Programming Mode",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
@@ -41,7 +41,41 @@
                         }
                     ]
                 }
+                {
+                    "name": "Jewelbots Friendship Mode",
+                    "architecture": "nRF51822",
+                    "version": "1.0.0",
+                    "category": "Jewelbots",
+                    "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_firmware_v100.tar.gz",
+                    "archiveFileName": "jewelbots_nRF51822_firmware_v100.tar.gz",
+                    "size": "3100000",
+                    "boards":
+                    [
+                        {"name": "JWB nRF51822(V1.0 32KB)"}
+
+                    ],
+                    "toolsDependencies":
+                    [
+                        {
+                            "packager": "Jewelbots",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "4.8.3-2014q1"
+                        },
+                        {
+                            "packager": "Jewelbots",
+                            "name": "bossac",
+                            "version": "1.3a-arduino"
+                        },
+                        {
+                            "packager":"arduino",
+                            "name":"avrdude",
+                            "version":"6.0.1-arduino5"
+                        }
+                    ]
+                }
+
             ],
+
             "tools":
             [
                 {
