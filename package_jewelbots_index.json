@@ -10,7 +10,7 @@
             "platforms":
             [
                 {
-                    "name": "Jewelbots Programming Mode",
+                    "name": "Jewelbots",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
@@ -19,7 +19,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "JWB nRF51822(V1.0 32KB)"}
+                        {"name": "Jewelbots Coding Mode"}
 
                     ],
                     "toolsDependencies":
@@ -42,7 +42,7 @@
                     ]
                 },
                 {
-                    "name": "Jewelbots Friendship Mode",
+                    "name": "Jewelbots",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
@@ -51,7 +51,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "JWB nRF51822(V1.0 32KB)"}
+                        {"name": "Jewelbots Friendship Mode"}
 
                     ],
                     "toolsDependencies":
