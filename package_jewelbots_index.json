@@ -19,7 +19,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "Jewelbots Device Coding Mode"},
+                        {"name": "Jewelbots Device Coding Mode"}
 
                     ],
                     "toolsDependencies":
