@@ -10,7 +10,7 @@
             "platforms":
             [
                 {
-                    "name": "Jewelbots",
+                    "name": "Jewelbots Coding",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
@@ -42,7 +42,7 @@
                     ]
                 },
                 {
-                    "name": "Jewelbots",
+                    "name": "Jewelbots Friendship",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
