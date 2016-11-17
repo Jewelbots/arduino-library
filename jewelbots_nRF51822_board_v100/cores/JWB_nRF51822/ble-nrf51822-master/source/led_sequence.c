@@ -14,7 +14,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
-#include "Arduino.h"
+
 
 
 #ifdef __cplusplus
@@ -30,40 +30,7 @@ extern "C"{
 #define PINK 0x3F0524
 #define CHARTREUSE 0x1F3F00
 
-uint8_t color_values[];
 
-
-extern void on(uint8_t number, char *color, uint8_t length)  {
-  enable_led();
-  clear_led();
-  color_lookup(color);
-  set_led_state_handler({number, color_values[0], color_values[1], color_values[2], 1});
-  nrf_delay_us(length);
-  clear_led();
-}
-
-extern void color_lookup(char *color)
-{
-  switch(color){
-  if(color == "red") {
-    color_values = {0x3F, 0x00, 0x00};
-  }
-  else if (color == "orange")
-    color_values = {0x3F, 0x1C, 0x00};
-  else if (color == "yellow")
-    color_values = {0x3F, 0x3F, 0x00};
-  else if (color == "green")
-    color_values = {0x00, 0x3F, 0x00};
-  else if (color == "blue")
-    color_values = {0x00, 0x00, 0x3F};
-  else if (color == "violet")
-     color_values = {0x1F, 0x00, 0x3F};
-  else if (color == "pink")
-      color_values = {0x3F, 0x1A, 0x3A};
-  else if (color == "magenta")
-      color_values = {0x3F, 0x0C, 0x3F};
-  }
-}
 
 
 extern void signal_power_down() {
@@ -280,6 +247,7 @@ extern void led_indicate_charging_state(bool is_charging) {
     set_led_state_handler(&red_off);
   }
 }
+
 
 
 #ifdef __cplusplus
