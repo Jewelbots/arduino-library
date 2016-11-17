@@ -10,7 +10,7 @@
             "platforms":
             [
                 { "name": "Jewelbots Firmware",
-                    "architecture": "nRF51822",
+                    "architecture": "JBFIRMWARE",
                     "version": "1.0.0",
                     "category": "Jewelbots",
                     "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_firmware_v100.tar.gz",
