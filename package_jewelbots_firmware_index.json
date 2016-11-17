@@ -18,7 +18,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "JWB nRF51822(V1.0 32KB)"}
+                        {"name": "JWB nRF51822(V1.0 32KB) II"}
 
                     ],
                     "toolsDependencies":
