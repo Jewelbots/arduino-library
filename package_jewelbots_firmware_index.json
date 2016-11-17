@@ -9,8 +9,7 @@
             "help":{ "online":"http://jewelbots.com" },
             "platforms":
             [
-                {
-                    "name": "Jewelbots Update",
+                { "name": "Jewelbots nRF51822 Boards (32-bit ARM Cortex-M0)",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
@@ -19,7 +18,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name" : "Jewelbots Device Friendship Mode"}
+                        {"name": "JWB nRF51822(V1.0 32KB)"}
 
                     ],
                     "toolsDependencies":
@@ -40,7 +39,9 @@
                             "version":"6.0.1-arduino5"
                         }
                     ]
-                }],
+                }
+
+            ],
 
             "tools":
             [
