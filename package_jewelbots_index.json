@@ -9,17 +9,16 @@
             "help":{ "online":"http://jewelbots.com" },
             "platforms":
             [
-                {
-                    "name": "Jewelbots",
+                { "name": "Jewelbots nRF51822 Boards (32-bit ARM Cortex-M0)",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
-                    "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_board_v100.tar.gz",
-                    "archiveFileName": "jewelbots_nRF51822_board_v100.tar.gz",
+                    "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_firmware_v100.tar.gz",
+                    "archiveFileName": "jewelbots_nRF51822_firmware_v100.tar.gz",
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "Jewelbots Device Coding Mode"}
+                        {"name": "JWB nRF51822(V1.0 32KB)"}
 
                     ],
                     "toolsDependencies":
