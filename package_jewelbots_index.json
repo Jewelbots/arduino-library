@@ -6,7 +6,7 @@
             "maintainer":"Jewelbots Inc",
             "websiteURL":"http://jewelbots.com",
             "email":"hi@jewelbots.com",
-            "help":{ "online":"http://jewelbots.com" },
+            "help":{"online":"http://jewelbots.com" },
             "platforms":
             [
                 {
@@ -14,7 +14,7 @@
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Jewelbots",
-                    "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_board_v100.tar.gz",
+                    "url": "https://jewelbots.github.io/arduino-library/jewelbots_nRF51822_board_v100.tar.gz",
                     "archiveFileName": "jewelbots_nRF51822_board_v100.tar.gz",
                     "size": "3100000",
                     "boards":
