@@ -19,6 +19,11 @@
 #include "sdk_common.h"
 
 
+
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
+
 #define ADV_LOG(...)
 
 static bool                            m_advertising_start_pending = false; /**< Flag to keep track of ongoing operations on persistent memory. */
@@ -67,7 +72,7 @@ static void ble_advertising_peer_address_clear()
 }
 
 
-/**@brief Function for checking if an address is non-zero. Used to determine if 
+/**@brief Function for checking if an address is non-zero. Used to determine if
  */
 static bool peer_address_exists(uint8_t const * address)
 {
@@ -114,7 +119,7 @@ uint32_t ble_advertising_init(ble_advdata_t const                 * p_advdata,
     m_advdata.include_appearance   = p_advdata->include_appearance;
     m_advdata.flags                = p_advdata->flags;
     m_advdata.short_name_len       = p_advdata->short_name_len;
-   /* 
+   /*
     if(p_advdata->uuids_complete != NULL)
     {
         m_advdata.uuids_complete = p_advdata->uuids_complete;
@@ -123,7 +128,7 @@ uint32_t ble_advertising_init(ble_advdata_t const                 * p_advdata,
     m_advdata.uuids_complete       = p_advdata->uuids_complete;
     m_advdata.uuids_more_available = p_advdata->uuids_more_available;
     m_advdata.uuids_solicited      = p_advdata->uuids_solicited;
-    
+
     if(p_advdata->p_manuf_specific_data != NULL)
     {
         m_advdata.p_manuf_specific_data   = &m_manuf_specific_data;
@@ -131,13 +136,13 @@ uint32_t ble_advertising_init(ble_advdata_t const                 * p_advdata,
         m_advdata.p_manuf_specific_data->company_identifier =
         p_advdata->p_manuf_specific_data->company_identifier;
         m_advdata.p_manuf_specific_data->data.size = p_advdata->p_manuf_specific_data->data.size;
-        
+
         for(uint32_t i = 0; i < m_advdata.p_manuf_specific_data->data.size; i++)
         {
             m_manuf_data_array[i] = p_advdata->p_manuf_specific_data->data.p_data[i];
         }
     }
-    
+
     if(p_advdata->p_service_data_array != NULL)
     {
         m_service_data.data.p_data                   = m_service_data_array;
@@ -161,7 +166,7 @@ uint32_t ble_advertising_init(ble_advdata_t const                 * p_advdata,
         m_advdata.p_slave_conn_int->max_conn_interval = p_advdata->p_slave_conn_int->max_conn_interval;
         m_advdata.p_slave_conn_int->min_conn_interval = p_advdata->p_slave_conn_int->min_conn_interval;
     }
-    
+
     if(p_advdata->p_tx_power_level != NULL)
     {
         m_advdata.p_tx_power_level     = &m_tx_power_level;
@@ -564,3 +569,8 @@ uint32_t ble_advertising_restart_without_whitelist(void)
 }
 
 
+
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
