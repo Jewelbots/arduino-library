@@ -12,6 +12,9 @@
 #ifndef BLE_GAP_CONN_H__
 #define BLE_GAP_CONN_H__
 
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
 /**
  * @addtogroup ser_codecs Serialization codecs
  * @ingroup ble_sdk_lib_serialization
@@ -117,7 +120,7 @@ uint32_t ble_gap_authenticate_rsp_enc(uint32_t         return_code,
  *
  * @param[in]  p_buf             Pointer to beginning of command request packet.
  * @param[in]  packet_len        Length (in bytes) of request packet.
- * @param[in]  p_addr_cycle_mode Pointer to address cycle mode.                                  
+ * @param[in]  p_addr_cycle_mode Pointer to address cycle mode.
  * @param[out] pp_addr           Pointer to pointer to the address structure.
 
  * @retval NRF_SUCCESS                Decoding success.
@@ -478,7 +481,7 @@ uint32_t ble_gap_ppcp_get_rsp_enc(uint32_t                            return_cod
 uint32_t ble_gap_adv_stop_rsp_enc(uint32_t         return_code,
                                   uint8_t * const  p_buf,
                                   uint32_t * const p_buf_len);
-                                  
+
 /**@brief Decodes @ref sd_ble_gap_auth_key_reply command request.
  *
  * @sa @ref nrf51_auth_key_reply_encoding for packet format,
@@ -1200,5 +1203,10 @@ uint32_t ble_gap_lesc_oob_data_get_rsp_enc(uint32_t                     return_c
                                            ble_gap_lesc_oob_data_t    * p_oobd_own,
                                            uint8_t * const              p_buf,
                                            uint32_t * const             p_buf_len);
+
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 #endif
