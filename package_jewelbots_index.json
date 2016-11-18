@@ -2,7 +2,7 @@
     "packages":
     [
         {
-            "name":"Jewelbots",
+            "name":"Jewelbots Arduino Library",
             "maintainer":"Jewelbots Inc",
             "websiteURL":"http://jewelbots.com",
             "email":"hi@jewelbots.com",
