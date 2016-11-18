@@ -10,13 +10,19 @@
 #include "sdk_errors.h"
 #include <stdint.h>
 
+
+
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
+
 #define MANUFACTURER_NAME                                                      \
   "Jewelbots" // Manufacturer. Will be passed to Device Information Service.
-               
+
 #define APP_COMPANY_IDENTIFIER 0x213
 //#define APP_COMPANY_IDENTIFIER					 0x0CCC
 #define APP_ADV_INTERVAL   MSEC_TO_UNITS(80, UNIT_0_625_MS)
-#define APP_ADV_TIMEOUT_IN_SECONDS 5                                       
+#define APP_ADV_TIMEOUT_IN_SECONDS 5
 	/**< The advertising timeout in units of seconds. */
 
 static ble_uuid_t m_adv_uuids[] = {
@@ -112,3 +118,9 @@ uint32_t adv_report_parse(uint8_t type, data_t *p_advdata, data_t *p_typedata) {
   }
   return NRF_ERROR_NOT_FOUND;
 }
+
+
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
