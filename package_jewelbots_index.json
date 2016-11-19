@@ -10,7 +10,7 @@
             "platforms":
             [
                 {
-                    "name": "Jewelbots nRF51822 Boards (32-bit ARM Cortex-M0)",
+                    "name": "Jewelbots Arduino Library",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Contributed",
@@ -19,7 +19,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "JWB nRF51822(V1.0 32KB)"}
+                        {"name": "Jewebots nRF51822"}
 
                     ],
                     "toolsDependencies":
