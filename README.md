@@ -35,7 +35,7 @@ This library is designed to make coding the Jewelbots for Arduino easier for use
 
 4. Test the "hello world" sketch below:
 
-''''
+````
 #include <Arduino.h>
 void setup() {
   // put your setup code here, to run once:
