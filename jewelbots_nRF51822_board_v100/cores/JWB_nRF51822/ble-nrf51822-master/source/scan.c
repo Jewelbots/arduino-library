@@ -10,6 +10,9 @@
 #include <string.h>
 //#include "nrf_log.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
 // 0x0168 //225ms
 // 0x00A0 // 100 ms
 #define SCAN_INTERVAL MSEC_TO_UNITS(240, UNIT_0_625_MS)
@@ -47,3 +50,8 @@ void scan_stop(void) {
     APP_ERROR_CHECK(err_code);
   }
 }
+
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
