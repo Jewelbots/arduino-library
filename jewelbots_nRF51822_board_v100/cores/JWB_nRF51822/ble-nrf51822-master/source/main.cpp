@@ -128,6 +128,7 @@ int main(void) {
 	if (app_dfu)
 	{
 			NRF_POWER->GPREGRET = 0;
+      set_first_startup();
 	}
 
   // Jewelbots Hardware Init
