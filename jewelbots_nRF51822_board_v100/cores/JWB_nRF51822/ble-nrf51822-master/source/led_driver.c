@@ -18,6 +18,8 @@
 #include "nrf_log.h"
 #include "pmic_driver.h"
 
+#include "Animation.h"
+
 #ifdef __cplusplus
 extern "C"{
 #endif // __cplusplus
