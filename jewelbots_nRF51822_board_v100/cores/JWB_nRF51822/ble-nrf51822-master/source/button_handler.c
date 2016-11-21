@@ -78,10 +78,10 @@ static void button_handler(uint8_t button, uint8_t action) {
 
 static void timer_handler(void *p_context) { UNUSED_PARAMETER(p_context); }
 
-void check_reset_reason() {
+void check_reset_reason(bool first_startup) {
   uint32_t reset_reason = 0;
   sd_power_reset_reason_get(&reset_reason);
-  if (reset_reason & POWER_RESETREAS_RESETPIN_Detected) {
+  if ((reset_reason & POWER_RESETREAS_RESETPIN_Detected) && (!first_startup)) {
     sd_power_reset_reason_clr(POWER_RESETREAS_RESETPIN_Msk);
     bootloader_start();
   }

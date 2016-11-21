@@ -124,10 +124,12 @@ static void timers_init(void) {
 int main(void) {
   //Set register flag on chip after exiting bootloader
   bool  app_dfu = (NRF_POWER->GPREGRET == BOOTLOADER_DFU_END);
+  bool first_startup = false;
 
 	if (app_dfu)
 	{
 			NRF_POWER->GPREGRET = 0;
+      first_startup = true;
 	}
 
   // Jewelbots Hardware Init
@@ -150,7 +152,7 @@ int main(void) {
   gap_params_init();
   conn_params_init();
   advertising_init();
-  //check_reset_reason();
+  check_reset_reason(first_startup);
   scan_start();
   err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
   APP_ERROR_CHECK(err_code);
