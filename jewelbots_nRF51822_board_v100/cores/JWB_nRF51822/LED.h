@@ -18,7 +18,6 @@ private:
   void color_lookup(char *color);
 };
 
-
 } // extern "C"
 
 #endif
