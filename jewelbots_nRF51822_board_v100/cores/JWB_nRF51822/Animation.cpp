@@ -18,7 +18,9 @@
 #include "Arduino.h"
 
 
+#ifdef __cplusplus
 extern "C"{
+#endif // __cplusplus
 
 uint8_t color_values[2];
 
@@ -30,7 +32,7 @@ uint8_t color_values[2];
   Animation::~Animation()
   {}
 
-  extern void Animation::breathe_all(uint8_t color){
+  void Animation::breathe_all(uint8_t color){
     enable_led();
     clear_led();
     // enable_led();
@@ -228,4 +230,6 @@ void Animation::rainbows(void){
     clear_led();
     disable_led();
 }
+#ifdef __cplusplus
 } // extern "C"
+#endif // __cplusplus
