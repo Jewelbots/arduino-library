@@ -9,7 +9,6 @@ extern "C"{
 #include <stdbool.h>
 #include <stdint.h>
 
-extern void breathe_all(uint8_t color);
 extern void clear_led(void);
 extern void boot_up_led_sequence(void);
 extern void led_indicate_charging_state(bool is_charging);
