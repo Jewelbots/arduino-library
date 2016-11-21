@@ -124,12 +124,11 @@ static void timers_init(void) {
 int main(void) {
   //Set register flag on chip after exiting bootloader
   bool  app_dfu = (NRF_POWER->GPREGRET == BOOTLOADER_DFU_END);
-  bool first_startup = false;
 
 	if (app_dfu)
 	{
 			NRF_POWER->GPREGRET = 0;
-      first_startup = true;
+      set_first_startup();
 	}
 
   // Jewelbots Hardware Init

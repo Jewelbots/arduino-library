@@ -24,7 +24,7 @@ extern "C"{
 #define BUTTON_PRESS_LONG_TICKS 65000
 #define BUTTON_PRESS_DFU_TICKS 160000
 
-
+bool first_startup = false;
 // for determining how long button was held down
 static uint32_t button_tick = 0;
 static uint32_t button_tick_release = 0;
@@ -78,7 +78,9 @@ static void button_handler(uint8_t button, uint8_t action) {
 
 static void timer_handler(void *p_context) { UNUSED_PARAMETER(p_context); }
 
-void check_reset_reason(bool first_startup) {
+void set_first_startup(void) { first_startup = true; }
+
+void check_reset_reason() {
   uint32_t reset_reason = 0;
   sd_power_reset_reason_get(&reset_reason);
   if ((reset_reason & POWER_RESETREAS_RESETPIN_Detected) && (!first_startup)) {
