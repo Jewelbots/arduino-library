@@ -78,6 +78,15 @@ static void button_handler(uint8_t button, uint8_t action) {
 
 static void timer_handler(void *p_context) { UNUSED_PARAMETER(p_context); }
 
+void check_reset_reason() {
+  uint32_t reset_reason = 0;
+  sd_power_reset_reason_get(&reset_reason);
+  if (reset_reason & POWER_RESETREAS_RESETPIN_Detected) {
+    sd_power_reset_reason_clr(POWER_RESETREAS_RESETPIN_Msk);
+    bootloader_start();
+  }
+}
+
 void buttons_init(void) {
   // Note: Array must be static because a pointer to it will be saved in the
   // Button handler

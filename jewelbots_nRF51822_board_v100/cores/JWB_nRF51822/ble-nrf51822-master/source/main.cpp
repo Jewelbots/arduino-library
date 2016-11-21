@@ -81,14 +81,6 @@ static char *__attribute__((unused)) ident =
     "$Build: DEVKIT " __DATE__ ", " __TIME__ " $";
 #endif
 
-static void check_reset_reason() {
-  uint32_t reset_reason = 0;
-  sd_power_reset_reason_get(&reset_reason);
-  if (reset_reason & POWER_RESETREAS_RESETPIN_Detected) {
-    sd_power_reset_reason_clr(POWER_RESETREAS_RESETPIN_Msk);
-    bootloader_start();
-  }
-}
 
 /**@brief Function to handle asserts in the SoftDevice.
  *
