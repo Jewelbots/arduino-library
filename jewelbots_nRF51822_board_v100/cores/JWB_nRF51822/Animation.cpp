@@ -22,7 +22,6 @@
 extern "C"{
 #endif // __cplusplus
 
-uint8_t color_values[2];
 
 
 
