@@ -54,12 +54,10 @@ static void button_handler(uint8_t button, uint8_t action) {
     APP_ERROR_CHECK(err_code);
 
     if (pmic_5V_present()){
-      if (total_ticks > BUTTON_PRESS_DFU_TICKS) {
+     if (total_ticks > BUTTON_PRESS_LONG_TICKS) {
         err_code = sd_power_gpregret_set(DFU_START_USB);
   			APP_ERROR_CHECK(err_code);
   			bootloader_start();
-      } else if (total_ticks > BUTTON_PRESS_LONG_TICKS) {
-        charging_button_press_long();
       } else if (total_ticks > BUTTON_PRESS_TICKS) {
         charging_button_press();
       }

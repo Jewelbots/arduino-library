@@ -160,8 +160,10 @@ int main(void) {
   for (;;) {
     display_charging();
     app_sched_execute();
-    //Run Arduino loop function
-    loop();
+    if (!pmic_5V_present()) {
+      //Run Arduino loop function
+      loop();
+    }
     // Put the device into low power mode until next event occurs
     ret_code_t err_code = sd_app_evt_wait();
     APP_ERROR_CHECK(err_code);
