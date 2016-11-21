@@ -265,6 +265,7 @@ void services_init(void) {
 
 extern uint8_t* color_lookup(char *color)
 {
+  uint8_t *color_values;
   if(color == "red") {
     color_values[0] = 0x3F;
     color_values[1] = 0x00;
