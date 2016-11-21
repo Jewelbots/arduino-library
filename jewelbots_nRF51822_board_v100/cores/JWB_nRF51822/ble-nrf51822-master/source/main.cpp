@@ -129,7 +129,7 @@ int main(void) {
 	{
 			NRF_POWER->GPREGRET = 0;
 	}
-  check_reset_reason()
+  check_reset_reason();
   // Jewelbots Hardware Init
   ret_code_t err_code;
   nrf_gpio_cfg_output(LED_RST);
