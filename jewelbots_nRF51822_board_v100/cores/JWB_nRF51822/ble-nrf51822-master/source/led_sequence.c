@@ -164,7 +164,89 @@ extern void led_indicate_charging_state(bool is_charging) {
   }
 }
 
-
+extern void breathe_all(uint8_t color){
+  enable_led();
+  clear_led();
+  // enable_led();
+  led_cmd_t led1 = {3, 0x00, 0x00, 0x00, 0};
+  led_cmd_t led2 = {1, 0x00, 0x00, 0x00, 0};
+  led_cmd_t led3 = {2, 0x00, 0x00, 0x00, 0};
+  led_cmd_t led4 = {0, 0x00, 0x00, 0x00, 0};
+  for (uint8_t i = 0; i < 31; i++) {
+    if (color == 1) {
+      led1.r = led1.r + 1;
+      led2.r = led2.r + 1;
+      led3.r = led3.r + 1;
+      led4.r = led4.r + 1;
+    }
+    if (color == 2) {
+      led1.g = led1.g + 1;
+      led2.g = led2.g + 1;
+      led3.g = led3.g + 1;
+      led4.g = led4.g + 1;
+    }
+    if (color == 3) {
+      led1.b = led1.b + 1;
+      led2.b = led2.b + 1;
+      led3.b = led3.b + 1;
+      led4.b = led4.b + 1;
+    }
+    if (color == 4) {
+      led1.r = led1.r + 1;
+      led2.r = led2.r + 1;
+      led3.r = led3.r + 1;
+      led4.r = led4.r + 1;
+      led1.b = led1.b + 1;
+      led2.b = led2.b + 1;
+      led3.b = led3.b + 1;
+      led4.b = led4.b + 1;
+    }
+    set_led_state_handler(&led1);
+    set_led_state_handler(&led2);
+    set_led_state_handler(&led3);
+    set_led_state_handler(&led4);
+    nrf_delay_us(30000);
+  }
+  nrf_delay_us(100);
+  for (uint8_t i = 31; i > 0; i--) {
+    if (color == 1) {
+      led1.r = led1.r - 1;
+      led2.r = led2.r - 1;
+      led3.r = led3.r - 1;
+      led4.r = led4.r - 1;
+    }
+    if (color == 2) {
+      led1.g = led1.g - 1;
+      led2.g = led2.g - 1;
+      led3.g = led3.g - 1;
+      led4.g = led4.g - 1;
+    }
+    if (color == 3) {
+      led1.b = led1.b - 1;
+      led2.b = led2.b - 1;
+      led3.b = led3.b - 1;
+      led4.b = led4.b - 1;
+    }
+    if (color == 4) {
+      led1.r = led1.r - 1;
+      led2.r = led2.r - 1;
+      led3.r = led3.r - 1;
+      led4.r = led4.r - 1;
+      led1.b = led1.b - 1;
+      led2.b = led2.b - 1;
+      led3.b = led3.b - 1;
+      led4.b = led4.b - 1;
+    }
+    set_led_state_handler(&led1);
+    set_led_state_handler(&led2);
+    set_led_state_handler(&led3);
+    set_led_state_handler(&led4);
+    nrf_delay_us(30000);
+  }
+  nrf_delay_us(10000);
+  clear_led();
+  disable_led();
+}
 
 #ifdef __cplusplus
 } // extern "C"

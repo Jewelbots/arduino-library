@@ -32,7 +32,7 @@ uint8_t color_values[2];
   Animation::~Animation()
   {}
 
-  void Animation::breathe_all(uint8_t color){
+  void Animation::breathe_single_color(uint8_t color){
     enable_led();
     clear_led();
     // enable_led();

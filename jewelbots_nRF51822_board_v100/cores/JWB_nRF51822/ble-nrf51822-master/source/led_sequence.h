@@ -12,6 +12,7 @@ extern "C"{
 extern void clear_led(void);
 extern void boot_up_led_sequence(void);
 extern void led_indicate_charging_state(bool is_charging);
+extern void breathe_all(uint8_t color);
 
 #ifdef __cplusplus
 } // extern "C"
