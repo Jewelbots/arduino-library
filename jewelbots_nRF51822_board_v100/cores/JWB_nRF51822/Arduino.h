@@ -52,6 +52,7 @@
 #include "pmic_driver.h"
 #include "scan.h"
 #include "LED.h"
+#include "Animation.h"
 // Arduino specific code
 
 

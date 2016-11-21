@@ -1,5 +1,5 @@
 
-#include "LED.h"
+#include "Animation.h"
 #include "led_sequence.h"
 #include "app_error.h"
 #include "app_timer.h"
