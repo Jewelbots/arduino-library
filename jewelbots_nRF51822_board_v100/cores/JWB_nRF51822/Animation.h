@@ -9,8 +9,10 @@ extern "C"{
 #include <stdbool.h>
 #include <stdint.h>
 
-class Animate {
+class Animation {
   public:
+    Animation();
+    ~Animation();
     extern void breathe_all(uint8_t color);
     void jewelbots_logo(void);
     void rainbows(void);
