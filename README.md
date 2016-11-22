@@ -31,15 +31,15 @@ This library is designed to make coding the Jewelbots for Arduino easier for use
 
 ```c
 #include <Arduino.h>
-void setup() {
-  // put your setup code here, to run once:
 
+LED led;
+
+void setup() {
+  // Put your setup code here, to run once.
 }
 
-
 void loop() {
-  // put your main code here, to run repeatedly:
-LED led;
-led.on(1, "blue", 650000);
+  // Put your main code here, to run repeatedly:
+  led.on(1, "blue", 650000);
 }
 ```
