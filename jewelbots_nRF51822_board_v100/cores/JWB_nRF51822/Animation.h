@@ -14,7 +14,7 @@ class Animation {
   public:
     Animation();
     ~Animation();
-    void breathe_single_color(uint8_t color);
+    void breathe_single_color(char *color);
     void jewelbots_logo(void);
     void rainbows(void);
  };
