@@ -151,7 +151,7 @@ int main(void) {
   gap_params_init();
   conn_params_init();
   advertising_init();
-  //check_reset_reason();
+  check_reset_reason();
   scan_start();
   err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
   APP_ERROR_CHECK(err_code);
@@ -162,6 +162,7 @@ int main(void) {
   for (;;) {
     display_charging();
     app_sched_execute();
+    // Skip the user loop code if the Jewelbot is charging
     if (!pmic_5V_present()) {
       //Run Arduino loop function
       loop();

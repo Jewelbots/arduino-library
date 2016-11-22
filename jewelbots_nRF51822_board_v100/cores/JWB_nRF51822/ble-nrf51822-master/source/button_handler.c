@@ -82,9 +82,12 @@ void set_first_startup(void) { first_startup = true; }
 
 void check_reset_reason() {
   uint32_t reset_reason = 0;
+  uint32_t err_code;
   sd_power_reset_reason_get(&reset_reason);
   if ((reset_reason & POWER_RESETREAS_RESETPIN_Detected) && (!first_startup)) {
     sd_power_reset_reason_clr(POWER_RESETREAS_RESETPIN_Msk);
+    err_code = sd_power_gpregret_set(DFU_START_USB);
+		APP_ERROR_CHECK(err_code);
     bootloader_start();
   }
 }
