@@ -19,7 +19,7 @@
                     "size": "3100000",
                     "boards":
                     [
-                        {"name": "Jewebots nRF51822"}
+                        {"name": "Jewebots nRF51822 staging"}
 
                     ],
                     "toolsDependencies":
