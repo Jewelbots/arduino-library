@@ -2,7 +2,7 @@
     "packages":
     [
         {
-            "name":"Jewelbots_Arduino_Library",
+            "name":"Jewelbots_Arduino_Lib_Staging",
             "maintainer":"Jewelbots Inc",
             "websiteURL":"http://jewelbots.com",
             "email":"hi@jewelbots.com",
@@ -10,11 +10,11 @@
             "platforms":
             [
                 {
-                    "name": "Jewelbots Arduino Library",
+                    "name": "Jewelbots Arduino Library Staging",
                     "architecture": "nRF51822",
                     "version": "1.0.0",
                     "category": "Contributed",
-                    "url": "http://jewelbots.github.io/arduino-library/jewelbots_nRF51822_board_v100.tar.gz",
+                    "url": "http://jewelbots.github.io/arduino-library-staging/jewelbots_nRF51822_board_v100.tar.gz",
                     "archiveFileName": "jewelbots_nRF51822_board_v100.tar.gz",
                     "size": "3100000",
                     "boards":
