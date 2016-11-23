@@ -1,4 +1,4 @@
-nRF51822.name=JWB nRF51822(staging)
+nRF51822.name=JWB nRF51822(V1.0 32KB)
 
 nRF51822.upload.tool=JWBLoader
 nRF51822.upload.protocol=
