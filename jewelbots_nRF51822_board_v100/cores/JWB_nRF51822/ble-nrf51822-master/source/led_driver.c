@@ -263,7 +263,7 @@ void services_init(void) {
   spi_led_init();
 }
 
-extern uint8_t* color_lookup(char *color)
+extern uint8_t* color_lookup(char &color)
 {
   uint8_t color_values[2];
   if(color == "red") {
