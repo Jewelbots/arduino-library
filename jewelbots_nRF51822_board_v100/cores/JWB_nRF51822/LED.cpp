@@ -31,7 +31,7 @@ extern "C"{
 
 
 
-  void LED::on(uint8_t number, const *color, uint8_t length)  {
+  void LED::on(uint8_t number, const char *color, uint8_t length)  {
     enable_led();
     clear_led();
     uint8_t *color_values = color_lookup(*color);
