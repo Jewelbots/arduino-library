@@ -263,53 +263,6 @@ void services_init(void) {
   spi_led_init();
 }
 
-extern uint8_t* color_lookup(char *&color)
-{
-  uint8_t color_values[2];
-  if(color == "red") {
-    color_values[0] = 0x3F;
-    color_values[1] = 0x00;
-    color_values[2] = 0x00;
-  }
-  else if (color == "orange"){
-    color_values[0] = 0x3F;
-    color_values[1] = 0x1C;
-    color_values[2] = 0x00;
-
-  }
-  else if (color == "yellow"){
-    color_values[0] = 0x3F;
-    color_values[1] = 0x3F;
-    color_values[2] = 0x00;
-
-  }
-  else if (color == "green"){
-    color_values[0] = 0x00;
-    color_values[1] = 0x3F;
-    color_values[2] = 0x00;
-  }
-  else if (color == "blue"){
-    color_values[0] = 0x00;
-    color_values[1] = 0x00;
-    color_values[2] = 0x3F;
-  }
-  else if (color == "violet"){
-    color_values[0] = 0x1F;
-    color_values[1] = 0x00;
-    color_values[2] = 0x3F;
-   }
-  else if (color == "pink"){
-    color_values[0] = 0x3F;
-    color_values[1] = 0x1A;
-    color_values[2] = 0x3A;
-    }
-  else if (color == "magenta"){
-    color_values[0] = 0x3F;
-    color_values[1] = 0x0C;
-    color_values[2] = 0x3F;
-    }
-    return color_values;
-}
 #ifdef __cplusplus
 } // extern "C"
 #endif // __cplusplus
