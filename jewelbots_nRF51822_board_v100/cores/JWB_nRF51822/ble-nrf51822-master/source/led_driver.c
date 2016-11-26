@@ -308,6 +308,7 @@ extern uint8_t* color_lookup(char *color)
     color_values[1] = 0x0C;
     color_values[2] = 0x3F;
     }
+    return color_values;
 }
 #ifdef __cplusplus
 } // extern "C"
