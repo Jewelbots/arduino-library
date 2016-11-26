@@ -1,5 +1,5 @@
 #include "Buzzer.h"
-
+#include "haptics_driver.h"
 
 extern "C"{
 

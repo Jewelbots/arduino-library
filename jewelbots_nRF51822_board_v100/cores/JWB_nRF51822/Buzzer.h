@@ -6,7 +6,6 @@
 
 extern "C"{
 
-#include "haptics_driver.h"
 
 class Buzzer {
 public:
