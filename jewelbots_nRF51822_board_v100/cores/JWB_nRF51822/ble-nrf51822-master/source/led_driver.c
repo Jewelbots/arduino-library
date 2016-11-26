@@ -265,7 +265,7 @@ void services_init(void) {
 
 extern uint8_t* color_lookup(char *color)
 {
-  uint8_t &color_values;
+  uint8_t color_values[3];
   if(color == "red") {
     color_values[0] = 0x3F;
     color_values[1] = 0x00;
@@ -308,7 +308,7 @@ extern uint8_t* color_lookup(char *color)
     color_values[1] = 0x0C;
     color_values[2] = 0x3F;
     }
-    return &color_values;
+    return color_values;
 }
 #ifdef __cplusplus
 } // extern "C"
