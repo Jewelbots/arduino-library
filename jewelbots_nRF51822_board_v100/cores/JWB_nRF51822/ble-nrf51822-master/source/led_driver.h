@@ -22,7 +22,7 @@ void set_led_state_handler(led_cmd_t *state);
 // JWBS -> global jewelbot state variable
 extern time_t jwbs_tod; // current time of day
 extern time_t jwbs_last_sync;
-extern uint8_t* color_lookup(char &color);
+extern uint8_t& color_lookup(char &color);
 #ifdef __cplusplus
 } // extern "C"
 #endif // __cplusplus
