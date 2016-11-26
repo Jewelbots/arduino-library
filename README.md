@@ -21,7 +21,7 @@ This library is designed to make coding the Jewelbots for Arduino easier for use
 1. Get [Arduino IDE from Arduino website](http://arduino.cc/en/Main/Software) and install it to your PC.
 1. Start the IDE and from the Menu, click "Preference...", add the following line to "Additional Boards Manager URLs"
   ```
-	https://jewelbots.github.io/arduino-library/package_jwb_staging_index.json  
+	https://jewelbots.github.io/arduino-library/package_jewelbots_index.json  
   ```
 
 1. Install the "Jewelbots Development Board" add-on via Boards Manager from the Menu: Tools -> Board -> Boards Manager ...
