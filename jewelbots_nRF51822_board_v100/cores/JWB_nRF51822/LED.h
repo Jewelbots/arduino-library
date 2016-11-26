@@ -14,7 +14,7 @@ public:
   LED();
   ~LED();
   void on(uint8_t number, char *color, uint8_t length);
-  uint8_t* color_lookup(char *color);
+  void color_lookup(char *color);
 
 };
 
