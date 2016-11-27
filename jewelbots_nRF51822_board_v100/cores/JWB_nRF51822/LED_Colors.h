@@ -13,7 +13,7 @@ struct Color
     this->r = r;
     this->g = g;
     this->b = b;
-  }
+  };
 
   uint8_t r, g, b;
 };
@@ -30,6 +30,5 @@ const Color COLORS[8] = {
 };
 
 }
-
 
 #endif
