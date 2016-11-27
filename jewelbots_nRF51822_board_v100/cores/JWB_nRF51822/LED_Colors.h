@@ -3,15 +3,14 @@
 #define __LED_COLORS_H__
 
 
-#ifdef __cplusplus
 extern "C"{
-#endif // __cplusplus
+ // __cplusplus
 
 enum ColorLabel { OFF = 0, RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4, MAGENTA = 5, CYAN = 6, WHITE = 7 }
 
 struct Color
 {
-  Color( uint8_t r, uint8_t g, uint8_t b )
+  color( uint8_t r, uint8_t g, uint8_t b )
   {
     this->r = r;
     this->g = g;
@@ -34,7 +33,6 @@ const Color COLORS[8] = {
 
 
 
-#ifdef __cplusplus
 }
-#endif // __cplusplus
+
 #endif
