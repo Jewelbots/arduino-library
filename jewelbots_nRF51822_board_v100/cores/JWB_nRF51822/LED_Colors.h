@@ -10,7 +10,7 @@ enum ColorLabel { OFF = 0, RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4, MAGENTA = 5
 
 struct Color
 {
-  color( uint8_t r, uint8_t g, uint8_t b )
+  Color( uint8_t r, uint8_t g, uint8_t b )
   {
     this->r = r;
     this->g = g;
