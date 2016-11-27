@@ -19,7 +19,7 @@ struct Color
   }
 
   uint8_t r, g, b;
-}
+};
 
 const Color COLORS[8] = {
   Color( 0x00, 0x00, 0x00 ), // Off
