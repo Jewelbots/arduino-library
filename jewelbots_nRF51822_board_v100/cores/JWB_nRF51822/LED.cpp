@@ -20,28 +20,81 @@
 
 extern "C"{
 
-  uint8_t color_values[2];
-
-
-    LED::LED()
-    {}
-
-    LED::~LED()
-    {}
 
 
 
-    void LED::on(uint8_t number, char *color, uint8_t length)  {
-      enable_led();
-      clear_led();
-      color_lookup(color);
-      led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
-      set_led_state_handler(options);
-      nrf_delay_us(length);
-      clear_led();
-    }
+  LED::LED()
+  {
+    enable_led();
+    clear_led();
+  }
+
+  LED::~LED()
+  {}
+
+  void LED::on(uint8_t number, char *color, uint8_t length)  {
+    uint8_t *color_values = color_lookup(color);
+    led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
+    set_led_state_handler(options);
+    nrf_delay_us(length);
+    clear_led();
+  }
+  void LED::on(uint8_t number, char *color, uint8_t length)  {
+     enable_led();
+     clear_led();
+     color_lookup(color);
+     led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
+     set_led_state_handler(options);
+     nrf_delay_us(length);
+     clear_led();
+   }
 
 
+   void LED::color_lookup(char *color)
+   {
+     if(color == "red") {
+       color_values[0] = 0x3F;
+       color_values[1] = 0x00;
+       color_values[2] = 0x00;
+     }
+     else if (color == "orange"){
+       color_values[0] = 0x3F;
+       color_values[1] = 0x1C;
+       color_values[2] = 0x00;
+
+     }
+     else if (color == "yellow"){
+       color_values[0] = 0x3F;
+       color_values[1] = 0x3F;
+       color_values[2] = 0x00;
+
+     }
+     else if (color == "green"){
+       color_values[0] = 0x00;
+       color_values[1] = 0x3F;
+       color_values[2] = 0x00;
+     }
+     else if (color == "blue"){
+       color_values[0] = 0x00;
+       color_values[1] = 0x00;
+       color_values[2] = 0x3F;
+     }
+     else if (color == "violet"){
+       color_values[0] = 0x1F;
+       color_values[1] = 0x00;
+       color_values[2] = 0x3F;
+      }
+     else if (color == "pink"){
+       color_values[0] = 0x3F;
+       color_values[1] = 0x1A;
+       color_values[2] = 0x3A;
+       }
+     else if (color == "magenta"){
+       color_values[0] = 0x3F;
+       color_values[1] = 0x0C;
+       color_values[2] = 0x3F;
+       }
+   }
   void LED::turnOn(LED_Pos led, ColorLabel color)
   {
       setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
