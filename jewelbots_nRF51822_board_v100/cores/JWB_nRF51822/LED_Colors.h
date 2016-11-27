@@ -2,7 +2,10 @@
 #ifndef __LED_COLORS_H__
 #define __LED_COLORS_H__
 
+
+#ifdef __cplusplus
 extern "C"{
+#endif // __cplusplus
 
 enum ColorLabel { OFF = 0, RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4, MAGENTA = 5, CYAN = 6, WHITE = 7 }
 
@@ -13,10 +16,10 @@ struct Color
     this->r = r;
     this->g = g;
     this->b = b;
-  };
+  }
 
   uint8_t r, g, b;
-};
+}
 
 const Color COLORS[8] = {
   Color( 0x00, 0x00, 0x00 ), // Off
@@ -29,6 +32,9 @@ const Color COLORS[8] = {
   Color( 0x3F, 0x3F, 0x3F ) // White
 };
 
-}
 
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 #endif
