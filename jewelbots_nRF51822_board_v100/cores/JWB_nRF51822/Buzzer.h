@@ -4,7 +4,10 @@
 
 
 
+
+#ifdef __cplusplus
 extern "C"{
+#endif // __cplusplus
 
 
 class Buzzer {
@@ -17,6 +20,9 @@ public:
 
 };
 
-} // extern "C"
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 
 #endif

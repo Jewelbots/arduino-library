@@ -1,5 +1,6 @@
 #include "Buzzer.h"
 #include "haptics_driver.h"
+#include "Arduino.h"
 
 extern "C"{
 
