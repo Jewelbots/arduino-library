@@ -21,13 +21,15 @@ This library is designed to make coding the Jewelbots for Arduino easier for use
 1. Get [Arduino IDE from Arduino website](http://arduino.cc/en/Main/Software) and install it to your PC.
 1. Start the IDE and from the Menu, click "Preference...", add the following line to "Additional Boards Manager URLs"
   ```
-	https://jewelbots.github.io/arduino-library/package_jwb_staging_index.json  
+	https://jewelbots.github.io/arduino-library/package_jewelbots_index.json  
   ```
 
-1. Install the "Jewelbots Development Board" add-on via Boards Manager from the Menu: Tools -> Board -> Boards Manager ...
-1. Select the "JWB nRF51822" board from Tools -> Board dropdown.
+1. Open the Boards Manager from the Menu: Tools -> Board "..." -> Boards Manager.
+1. Search for "Jewelbots", select the "Jewelbots Arduino Library" and click "Install".
+1. Wait for the library to finish installation and click "Close".
+1. Go to Tools -> Board "..." dropdown and select the "JWB nRF51822" board.
 1. Make sure the serial port is selected from Tools -> Port.
-1. Put your Jewelbots device in coding mode by holding down the button for two seconds
+1. Put your Jewelbots device in coding mode by holding down the button for two seconds. Either the charging light will go out or the device will flash purple depending on what version of the firmware you have. Coding mode lasts for two minutes.
 1. Test the "hello world" sketch below:
 
 ```c

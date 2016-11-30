@@ -18,6 +18,7 @@ extern "C"{
     haptics_msg_short();
   }
 
+
   void Buzzer::longBuzz()
   {
     haptics_msg_long();

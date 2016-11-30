@@ -89,6 +89,8 @@ extern "C"{
        color_values[2] = 0x3F;
        }
    }
+
+
   void LED::turnOn(LED_Pos led, ColorLabel color)
   {
       setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
@@ -98,6 +100,7 @@ extern "C"{
   {
       setLight(uint8_t(led), COLORS[ OFF ].r, COLORS[ OFF ].g, COLORS[ OFF ].b);
   }
+
 
   void LED::flash(LED_Pos led, ColorLabel color, uint8_t microseconds)
   {

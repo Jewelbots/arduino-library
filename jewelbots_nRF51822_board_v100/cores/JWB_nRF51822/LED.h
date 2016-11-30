@@ -18,7 +18,6 @@ public:
   ~LED();
   void on(uint8_t number, char *color, uint8_t length);
   void color_lookup(char *color);
-
   void turnOn(LED_Pos led, ColorLabel color );
   void turnOff(LED_Pos led);
   void flash(LED_Pos led, ColorLabel color, uint8_t microseconds);
