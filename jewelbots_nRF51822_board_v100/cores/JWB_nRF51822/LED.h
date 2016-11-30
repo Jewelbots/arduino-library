@@ -13,7 +13,7 @@ class LED {
 public:
   LED();
   ~LED();
-  void on(uint8_t number, char *color, uint8_t length);
+  void on(uint8_t number, char *color, uint32_t length);
   void color_lookup(char *color);
 
 };
