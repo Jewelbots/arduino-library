@@ -43,6 +43,6 @@ void setup() {
 
 void loop() {
   // Put your main code here, to run repeatedly:
-  led.on(1, "blue", 650000);
+  led.on(1, "blue", 650);
 }
 ```
