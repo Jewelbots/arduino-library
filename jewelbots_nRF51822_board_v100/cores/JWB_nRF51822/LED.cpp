@@ -24,12 +24,13 @@ uint8_t color_values[2];
 
 
   LED::LED()
-  {}
+  {
+    enable_led();
+    clear_led();
+  }
 
   LED::~LED()
   {}
-
-
 
   void LED::on(uint8_t number, char *color, uint8_t length)  {
     enable_led();
@@ -41,6 +42,28 @@ uint8_t color_values[2];
     clear_led();
   }
 
+  void LED::turnOn(LED_Pos led, ColorLabel color)
+  {
+      setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+  }
+
+  void LED::turnOff(LED_Pos led)
+  {
+      setLight(uint8_t(led), COLORS[ OFF ].r, COLORS[ OFF ].g, COLORS[ OFF ].b);
+  }
+
+  void LED::flash(LED_Pos led, ColorLabel color, uint8_t microseconds)
+  {
+      turnOn(led, color);
+      nrf_delay_us(microseconds);
+      turnOff(led);
+  }
+
+  void LED::setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b)
+  {
+    led_cmd_t options[4] = {number, r, g, b, 1};
+    set_led_state_handler(options);
+  }
 
   void LED::color_lookup(char *color)
   {
