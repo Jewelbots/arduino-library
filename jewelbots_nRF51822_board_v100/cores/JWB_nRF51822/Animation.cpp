@@ -26,7 +26,9 @@ extern "C"{
 
 
   Animation::Animation()
-  {}
+  {
+    //Init or enable code here causes the Jewelbot to lock up on reset
+  }
 
   Animation::~Animation()
   {}

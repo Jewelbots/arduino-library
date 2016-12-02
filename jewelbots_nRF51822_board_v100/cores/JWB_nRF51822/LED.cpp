@@ -25,7 +25,9 @@ extern "C"{
 
 
   LED::LED()
-  {}
+  {
+    //Init or enable code here causes the Jewelbot to lock up on reset
+  }
 
   LED::~LED()
   {}

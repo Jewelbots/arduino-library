@@ -6,8 +6,7 @@ extern "C"{
 
   Buzzer::Buzzer()
   {
-    haptics_init();
-    haptics_enable();
+    //Init or enable code here causes the Jewelbot to lock up on reset
   }
 
   Buzzer::~Buzzer()
