@@ -25,10 +25,7 @@ extern "C"{
 
 
   LED::LED()
-  {
-    enable_led();
-    clear_led();
-  }
+  {}
 
   LED::~LED()
   {}
