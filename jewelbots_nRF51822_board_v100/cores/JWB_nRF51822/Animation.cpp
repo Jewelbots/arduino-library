@@ -167,7 +167,6 @@ extern "C"{
       set_led_state_handler(&teal_ch);
       nrf_delay_us(80000);
     }
-    haptics_test_run1();
   }
 
   //  quickly fade out the colors
