@@ -30,6 +30,16 @@ static uint32_t button_tick = 0;
 static uint32_t button_tick_release = 0;
 static uint32_t total_ticks = 0;
 
+__attribute__((weak)) void button_press(void)
+{
+}
+__attribute__((weak)) void button_press_long(void)
+{
+}
+ __attribute__((weak)) void charging_button_press(void)
+{
+}
+
 // for demo
 static volatile uint8_t button_sequence_number = 0;
 static volatile uint8_t last_button_sequence_number = 255;
