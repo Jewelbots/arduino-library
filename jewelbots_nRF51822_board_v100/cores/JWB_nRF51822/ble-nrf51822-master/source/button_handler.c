@@ -25,6 +25,7 @@ extern "C"{
 #define BUTTON_PRESS_DFU_TICKS 160000
 
 bool first_startup = false;
+bool charge_status = false;
 // for determining how long button was held down
 static uint32_t button_tick = 0;
 static uint32_t button_tick_release = 0;
@@ -126,8 +127,12 @@ void buttons_init(void) {
 void display_charging() {
   if (pmic_5V_present()) {
     led_indicate_charging_state(pmic_is_charging());
+    charge_status = true;
   } else {
-    clear_led();
+    if (charge_status) {
+      clear_led();
+      charge_status = false;
+    }
   }
 }
 
