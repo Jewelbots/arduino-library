@@ -32,7 +32,7 @@ extern "C"{
   LED::~LED()
   {}
 
-
+// Depracated
    void LED::color_lookup(char *color)
    {
      if(color == "red") {
@@ -85,14 +85,14 @@ extern "C"{
       setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
 
   }
-
+// Depracated
   void LED::on(uint8_t number, char *color, uint32_t length)  {
     enable_led();
     clear_led();
     color_lookup(color);
     led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
     set_led_state_handler(options);
-    nrf_delay_us(length * 1000);
+    nrf_delay_ms(length);
     clear_led();
   }
 
@@ -102,10 +102,10 @@ extern "C"{
   }
 
 
-  void LED::flash(LED_Pos led, ColorLabel color, uint8_t microseconds)
+  void LED::flash(LED_Pos led, ColorLabel color, uint8_t milliseconds)
   {
       turnOn(led, color);
-      nrf_delay_us(microseconds);
+      nrf_delay_ms(milliseconds);
       turnOff(led);
   }
 
