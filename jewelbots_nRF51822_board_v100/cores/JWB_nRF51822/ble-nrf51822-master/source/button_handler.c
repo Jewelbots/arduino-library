@@ -126,8 +126,11 @@ void buttons_init(void) {
 
 void display_charging() {
   if (pmic_5V_present()) {
+    if (!charge_status) {
+      clear_led();
+      charge_status = true;
+    }
     led_indicate_charging_state(pmic_is_charging());
-    charge_status = true;
   } else {
     if (charge_status) {
       clear_led();
