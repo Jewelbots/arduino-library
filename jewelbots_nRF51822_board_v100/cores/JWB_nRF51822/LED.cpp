@@ -92,7 +92,7 @@ extern "C"{
     color_lookup(color);
     led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
     set_led_state_handler(options);
-    nrf_delay_ms(length);
+    nrf_delay_us(length * 1000);
     clear_led();
   }
 
@@ -105,7 +105,7 @@ extern "C"{
   void LED::flash(LED_Pos led, ColorLabel color, uint8_t milliseconds)
   {
       turnOn(led, color);
-      nrf_delay_ms(milliseconds);
+      nrf_delay_us(milliseconds * 1000);
       turnOff(led);
   }
 
