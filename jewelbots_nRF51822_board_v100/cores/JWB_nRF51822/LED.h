@@ -10,7 +10,7 @@ extern "C"{
 #include <stdint.h>
 #include "LED_Colors.h"
 
-enum LED_Pos { SE = 0, SW = 1, NW = 2, NE = 3 };
+enum LED_Pos { SE = 3, SW = 0, NW = 1, NE = 2 };
 
 class LED {
 public:
