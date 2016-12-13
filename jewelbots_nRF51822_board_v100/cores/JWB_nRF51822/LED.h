@@ -21,8 +21,6 @@ public:
   void turnOn(LED_Pos led, ColorLabel color );
   void turnOff(LED_Pos led);
   void flash(LED_Pos led, ColorLabel color, uint8_t microseconds);
-
-private:
   void setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b);
 
 };
