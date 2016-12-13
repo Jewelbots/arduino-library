@@ -72,6 +72,9 @@ extern "C"{
       turn_off_all();
   }
 
+// Advanced feature - Use a custom RGB value
+// input number is the LED position = (SE = 3, SW = 0, NW = 1, NE = 2)
+// Each value of R, G, and B can each accept a value from 0 to 63 or 0x0 to 0x3F
   void LED::setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b)
   {
     enable_led();
