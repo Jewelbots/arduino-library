@@ -22,8 +22,6 @@ class LED {
     void turn_off_all();
     void flash_single(LED_Pos led, ColorLabel color, uint32_t microseconds);
     void flash_all(ColorLabel color, uint32_t microseconds);
-
-  private:
     void setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b);
 
 };

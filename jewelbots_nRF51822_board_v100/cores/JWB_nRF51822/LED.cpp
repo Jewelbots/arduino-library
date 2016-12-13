@@ -35,20 +35,15 @@ extern "C"{
 
   void LED::turn_on_single(LED_Pos led, ColorLabel color)
   {
-    enable_led();
     setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
-
   }
 
   void LED::turn_on_all(ColorLabel color)
   {
-    enable_led();
-    clear_led();
     setLight(0, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
     setLight(1, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
     setLight(2, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
     setLight(3, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
-
   }
 
   void LED::turn_off_single(LED_Pos led)
@@ -58,8 +53,8 @@ extern "C"{
 
   void LED::turn_off_all()
   {
-      clear_led();
-      disable_led();
+    clear_led();
+    disable_led();
   }
 
 
@@ -79,6 +74,7 @@ extern "C"{
 
   void LED::setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b)
   {
+    enable_led();
     led_cmd_t options[4] = {number, r, g, b, 1};
     set_led_state_handler(options);
   }
