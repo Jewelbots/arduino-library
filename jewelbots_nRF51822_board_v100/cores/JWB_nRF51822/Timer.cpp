@@ -42,7 +42,7 @@ extern "C"{
   void Timer::pause(uint32_t milliseconds)
   {
     if (milliseconds < 1){
-      milliseconds = 50;
+      milliseconds = 1;
     } else if (milliseconds > 20000) {
       milliseconds = 20000;
     }
