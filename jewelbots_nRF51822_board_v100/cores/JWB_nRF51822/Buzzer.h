@@ -10,8 +10,8 @@ class Buzzer {
 public:
   Buzzer();
   ~Buzzer();
-  void shortBuzz();
-  void longBuzz();
+  void short_buzz();
+  void long_buzz();
 
 };
 } // extern "C"

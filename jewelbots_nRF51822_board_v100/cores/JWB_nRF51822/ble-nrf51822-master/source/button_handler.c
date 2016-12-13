@@ -134,6 +134,7 @@ void display_charging() {
   } else {
     if (charge_status) {
       clear_led();
+      disable_led();
       charge_status = false;
     }
   }

@@ -13,17 +13,18 @@ extern "C"{
 enum LED_Pos { SE = 3, SW = 0, NW = 1, NE = 2 };
 
 class LED {
-public:
-  LED();
-  ~LED();
-  void on(uint8_t number, char *color, uint32_t length);
-  void color_lookup(char *color);
-  void turnOn(LED_Pos led, ColorLabel color );
-  void turnOff(LED_Pos led);
-  void flash(LED_Pos led, ColorLabel color, uint8_t microseconds);
+  public:
+    LED();
+    ~LED();
+    void turn_on_single(LED_Pos led, ColorLabel color );
+    void turn_on_all(ColorLabel color );
+    void turn_off_single(LED_Pos led);
+    void turn_off_all();
+    void flash_single(LED_Pos led, ColorLabel color, uint32_t microseconds);
+    void flash_all(ColorLabel color, uint32_t microseconds);
 
-private:
-  void setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b);
+  private:
+    void setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b);
 
 };
 

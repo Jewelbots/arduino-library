@@ -23,6 +23,7 @@ extern "C"{
 
   uint8_t color_values[2];
 
+  Timer led_timer;
 
   LED::LED()
   {
@@ -32,81 +33,48 @@ extern "C"{
   LED::~LED()
   {}
 
-// Depracated
-   void LED::color_lookup(char *color)
-   {
-     if(color == "red") {
-       color_values[0] = 0x3F;
-       color_values[1] = 0x00;
-       color_values[2] = 0x00;
-     }
-     else if (color == "orange"){
-       color_values[0] = 0x3F;
-       color_values[1] = 0x1C;
-       color_values[2] = 0x00;
-
-     }
-     else if (color == "yellow"){
-       color_values[0] = 0x3F;
-       color_values[1] = 0x3F;
-       color_values[2] = 0x00;
-
-     }
-     else if (color == "green"){
-       color_values[0] = 0x00;
-       color_values[1] = 0x3F;
-       color_values[2] = 0x00;
-     }
-     else if (color == "blue"){
-       color_values[0] = 0x00;
-       color_values[1] = 0x00;
-       color_values[2] = 0x3F;
-     }
-     else if (color == "violet"){
-       color_values[0] = 0x1F;
-       color_values[1] = 0x00;
-       color_values[2] = 0x3F;
-      }
-     else if (color == "pink"){
-       color_values[0] = 0x3F;
-       color_values[1] = 0x1A;
-       color_values[2] = 0x3A;
-       }
-     else if (color == "magenta"){
-       color_values[0] = 0x3F;
-       color_values[1] = 0x0C;
-       color_values[2] = 0x3F;
-       }
-   }
-
-
-  void LED::turnOn(LED_Pos led, ColorLabel color)
+  void LED::turn_on_single(LED_Pos led, ColorLabel color)
   {
-      setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+    enable_led();
+    setLight(uint8_t(led), COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
 
   }
-// Depracated
-  void LED::on(uint8_t number, char *color, uint32_t length)  {
+
+  void LED::turn_on_all(ColorLabel color)
+  {
     enable_led();
     clear_led();
-    color_lookup(color);
-    led_cmd_t options[4] = {number, color_values[0], color_values[1], color_values[2], 1};
-    set_led_state_handler(options);
-    nrf_delay_us(length * 1000);
-    clear_led();
+    setLight(0, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+    setLight(1, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+    setLight(2, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+    setLight(3, COLORS[ color ].r, COLORS[ color ].g, COLORS[ color ].b);
+
   }
 
-  void LED::turnOff(LED_Pos led)
+  void LED::turn_off_single(LED_Pos led)
   {
       setLight(uint8_t(led), COLORS[ OFF ].r, COLORS[ OFF ].g, COLORS[ OFF ].b);
   }
 
-
-  void LED::flash(LED_Pos led, ColorLabel color, uint8_t milliseconds)
+  void LED::turn_off_all()
   {
-      turnOn(led, color);
-      nrf_delay_us(milliseconds * 1000);
-      turnOff(led);
+      clear_led();
+      disable_led();
+  }
+
+
+  void LED::flash_single(LED_Pos led, ColorLabel color, uint32_t milliseconds)
+  {
+      turn_on_single(led, color);
+      led_timer.pause(milliseconds);
+      turn_off_single(led);
+  }
+
+  void LED::flash_all(ColorLabel color, uint32_t milliseconds)
+  {
+      turn_on_all(color);
+      led_timer.pause(milliseconds);
+      turn_off_all();
   }
 
   void LED::setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b)

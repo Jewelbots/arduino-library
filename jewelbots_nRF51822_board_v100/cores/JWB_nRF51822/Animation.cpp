@@ -33,7 +33,9 @@ extern "C"{
   Animation::~Animation()
   {}
 
-  void Animation::breathe_single_color(char *color){
+  Timer animation_timer;
+
+  void Animation::breathe_single_color(ColorLabel color){
     enable_led();
     clear_led();
     // enable_led();
@@ -42,25 +44,35 @@ extern "C"{
     led_cmd_t led3 = {2, 0x00, 0x00, 0x00, 0};
     led_cmd_t led4 = {0, 0x00, 0x00, 0x00, 0};
     for (uint8_t i = 0; i < 31; i++) {
-      if (color == "red") {
+      if (color == RED) {
         led1.r = led1.r + 1;
         led2.r = led2.r + 1;
         led3.r = led3.r + 1;
         led4.r = led4.r + 1;
       }
-      if (color == "green") {
+      if (color == GREEN) {
         led1.g = led1.g + 1;
         led2.g = led2.g + 1;
         led3.g = led3.g + 1;
         led4.g = led4.g + 1;
       }
-      if (color == "blue") {
+      if (color == BLUE) {
         led1.b = led1.b + 1;
         led2.b = led2.b + 1;
         led3.b = led3.b + 1;
         led4.b = led4.b + 1;
       }
-      if (color == "purple") {
+      if (color == YELLOW) {
+        led1.r = led1.r + 1;
+        led2.r = led2.r + 1;
+        led3.r = led3.r + 1;
+        led4.r = led4.r + 1;
+        led1.g = led1.g + 1;
+        led2.g = led2.g + 1;
+        led3.g = led3.g + 1;
+        led4.g = led4.g + 1;
+      }
+      if (color == MAGENTA) {
         led1.r = led1.r + 1;
         led2.r = led2.r + 1;
         led3.r = led3.r + 1;
@@ -70,33 +82,66 @@ extern "C"{
         led3.b = led3.b + 1;
         led4.b = led4.b + 1;
       }
+      if (color == CYAN) {
+        led1.g = led1.g + 1;
+        led2.g = led2.g + 1;
+        led3.g = led3.g + 1;
+        led4.g = led4.g + 1;
+        led1.b = led1.b + 1;
+        led2.b = led2.b + 1;
+        led3.b = led3.b + 1;
+        led4.b = led4.b + 1;
+      }
+      if (color == WHITE) {
+        led1.r = led1.r + 1;
+        led2.r = led2.r + 1;
+        led3.r = led3.r + 1;
+        led4.r = led4.r + 1;
+        led1.g = led1.g + 1;
+        led2.g = led2.g + 1;
+        led3.g = led3.g + 1;
+        led4.g = led4.g + 1;
+        led1.b = led1.b + 1;
+        led2.b = led2.b + 1;
+        led3.b = led3.b + 1;
+        led4.b = led4.b + 1;
+      }
       set_led_state_handler(&led1);
       set_led_state_handler(&led2);
       set_led_state_handler(&led3);
       set_led_state_handler(&led4);
-      nrf_delay_us(30000);
+      animation_timer.pause(30);
     }
-    nrf_delay_us(100);
     for (uint8_t i = 31; i > 0; i--) {
-      if (color == "red") {
+      if (color == RED) {
         led1.r = led1.r - 1;
         led2.r = led2.r - 1;
         led3.r = led3.r - 1;
         led4.r = led4.r - 1;
       }
-      if (color == "green") {
+      if (color == GREEN) {
         led1.g = led1.g - 1;
         led2.g = led2.g - 1;
         led3.g = led3.g - 1;
         led4.g = led4.g - 1;
       }
-      if (color == "blue") {
+      if (color == BLUE) {
         led1.b = led1.b - 1;
         led2.b = led2.b - 1;
         led3.b = led3.b - 1;
         led4.b = led4.b - 1;
       }
-      if (color == "purple") {
+      if (color == YELLOW) {
+        led1.r = led1.r - 1;
+        led2.r = led2.r - 1;
+        led3.r = led3.r - 1;
+        led4.r = led4.r - 1;
+        led1.g = led1.g - 1;
+        led2.g = led2.g - 1;
+        led3.g = led3.g - 1;
+        led4.g = led4.g - 1;
+      }
+      if (color == MAGENTA) {
         led1.r = led1.r - 1;
         led2.r = led2.r - 1;
         led3.r = led3.r - 1;
@@ -106,13 +151,37 @@ extern "C"{
         led3.b = led3.b - 1;
         led4.b = led4.b - 1;
       }
+      if (color == CYAN) {
+        led1.g = led1.g - 1;
+        led2.g = led2.g - 1;
+        led3.g = led3.g - 1;
+        led4.g = led4.g - 1;
+        led1.b = led1.b - 1;
+        led2.b = led2.b - 1;
+        led3.b = led3.b - 1;
+        led4.b = led4.b - 1;
+      }
+      if (color == WHITE) {
+        led1.r = led1.r - 1;
+        led2.r = led2.r - 1;
+        led3.r = led3.r - 1;
+        led4.r = led4.r - 1;
+        led1.g = led1.g - 1;
+        led2.g = led2.g - 1;
+        led3.g = led3.g - 1;
+        led4.g = led4.g - 1;
+        led1.b = led1.b - 1;
+        led2.b = led2.b - 1;
+        led3.b = led3.b - 1;
+        led4.b = led4.b - 1;
+      }
       set_led_state_handler(&led1);
       set_led_state_handler(&led2);
       set_led_state_handler(&led3);
       set_led_state_handler(&led4);
-      nrf_delay_us(30000);
+      animation_timer.pause(30);
     }
-    nrf_delay_us(10000);
+    animation_timer.pause(10);
     clear_led();
     disable_led();
   }
@@ -144,7 +213,7 @@ extern "C"{
     set_led_state_handler(&led2);
     set_led_state_handler(&led3);
     set_led_state_handler(&led4);
-    nrf_delay_us(40000);
+    animation_timer.pause(40);
   }
 
   //  Rotate the logo colors around the face
@@ -165,7 +234,7 @@ extern "C"{
       led_cmd_t teal_ch = {teal_led[j], 0x00, 0x24, 0x18, 0};
       set_led_state_handler(&red_ch);
       set_led_state_handler(&teal_ch);
-      nrf_delay_us(80000);
+      animation_timer.pause(80);
     }
   }
 
@@ -188,9 +257,9 @@ extern "C"{
     set_led_state_handler(&led2);
     set_led_state_handler(&led3);
     set_led_state_handler(&led4);
-    nrf_delay_us(40000);
+    animation_timer.pause(40);
   }
-  nrf_delay_us(10000);
+  animation_timer.pause(10);
   clear_led();
   disable_led();
 }
@@ -208,24 +277,24 @@ void Animation::rainbows(void){
     led_cmd_t pink = {2, 0x3F, 0x1A, 0x3A, 1};
     led_cmd_t magenta = {3, 0x3F, 0x0C, 0x3F, 1};
 
-    int delay = 100000;
+    int delay = 100;
     for (int i = 0; i < 4; i++) {
       set_led_state_handler(&red);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&orange);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&yellow);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&green);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&blue);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&violet);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&pink);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
       set_led_state_handler(&magenta);
-      nrf_delay_us(delay);
+      animation_timer.pause(delay);
     }
     clear_led();
     disable_led();

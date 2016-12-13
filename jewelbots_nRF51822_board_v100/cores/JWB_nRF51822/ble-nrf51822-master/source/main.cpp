@@ -156,6 +156,7 @@ int main(void) {
   err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
   APP_ERROR_CHECK(err_code);
   boot_up_led_sequence();
+  arduino_timer_init();
   // Run additional init from the setup function
   setup();
   // Main loop

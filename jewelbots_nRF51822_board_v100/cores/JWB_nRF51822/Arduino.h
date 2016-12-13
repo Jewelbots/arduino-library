@@ -51,10 +51,11 @@
 #include "led_sequence.h"
 #include "pmic_driver.h"
 #include "scan.h"
+// Arduino specific code
 #include "LED.h"
 #include "Buzzer.h"
 #include "Animation.h"
-// Arduino specific code
+#include "Timer.h"
 
 
 #ifdef __cplusplus

@@ -12,13 +12,13 @@ extern "C"{
   Buzzer::~Buzzer()
   {}
 
-  void Buzzer::shortBuzz()
+  void Buzzer::short_buzz()
   {
     haptics_msg_short();
   }
 
 
-  void Buzzer::longBuzz()
+  void Buzzer::long_buzz()
   {
     haptics_msg_long();
   }
