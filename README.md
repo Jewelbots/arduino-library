@@ -46,3 +46,6 @@ void loop() {
   led.on(1, "blue", 650);
 }
 ```
+
+If you would like to contribute to this library, you can get started in the Wiki: 
+https://github.com/Jewelbots/arduino-library/wiki
