@@ -47,5 +47,4 @@ void loop() {
 }
 ```
 
-If you would like to contribute to this library, you can get started in the Wiki: 
-https://github.com/Jewelbots/arduino-library/wiki
+If you would like to contribute to this library, you can get started in the [Wiki](https://github.com/Jewelbots/arduino-library/wiki)
