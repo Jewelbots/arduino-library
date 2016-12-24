@@ -1,7 +1,7 @@
 # Jewelbots Library for Arduino IDE Development
 
 
-This library is designed to make coding the Jewelbots for Arduino easier for users. Installation instructions are below. If you would like to contribute, pull requests are welcome. Documentation is here.
+This library is designed to make coding the Jewelbots for Arduino easier for users. Installation instructions are below. If you would like to contribute, pull requests are welcome. Documentation is here and in the Wiki. Please feel free to ask us questions in Slack by signing up [here](https://wt-sara-jewelbots-com-0.run.webtask.io/jewelbots-signup). 
 
 # Requirements
 
