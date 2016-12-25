@@ -2,7 +2,7 @@
 
 void setup() {
   // put your setup code here, to run once:
-  breath_all(1);
+  breathe_all(1);
 }
 
 void loop() {
