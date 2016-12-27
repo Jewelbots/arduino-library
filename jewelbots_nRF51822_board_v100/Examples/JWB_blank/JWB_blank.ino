@@ -7,5 +7,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  NRF_LOG("test");
+  Animation animation;
+  animation.jewelbots_logo();
+}
+
+void button_press() {
+  // put code here to run whenever the Magic Button is pressed:
+  Animation animation;
+  animation.breathe_single_color(BLUE);
 }
