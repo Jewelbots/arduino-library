@@ -7,5 +7,4 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  NRF_LOG("test");
 }
