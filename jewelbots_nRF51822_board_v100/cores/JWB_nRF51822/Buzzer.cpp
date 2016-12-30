@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include "Buzzer.h"
 #include "haptics_driver.h"
 #include "Arduino.h"
@@ -23,4 +24,13 @@ extern "C"{
     haptics_msg_long();
   }
 
+  /*
+    short_buzz: 250
+    long_buzz: 750
+  */
+  void Buzzer::buzz(uint32_t len)
+  {
+    haptics_msg(len);
+  }
+  
 } // extern "C"

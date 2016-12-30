@@ -12,6 +12,7 @@ public:
   ~Buzzer();
   void short_buzz();
   void long_buzz();
+  void buzz(uint32_t ms);
 
 };
 } // extern "C"
