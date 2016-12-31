@@ -20,8 +20,8 @@ class LED {
     void turn_on_all(ColorLabel color );
     void turn_off_single(LED_Pos led);
     void turn_off_all();
-    void flash_single(LED_Pos led, ColorLabel color, uint32_t microseconds);
-    void flash_all(ColorLabel color, uint32_t microseconds);
+    void flash_single(LED_Pos led, ColorLabel color, uint32_t milliseconds);
+    void flash_all(ColorLabel color, uint32_t milliseconds);
     void setLight(uint8_t number, uint8_t r, uint8_t g, uint8_t b);
 
 };
