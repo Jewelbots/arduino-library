@@ -33,17 +33,23 @@ This library is designed to make coding the Jewelbots for Arduino easier for use
 1. Test the "hello world" sketch below:
 
 ```c
-#include <Arduino.h>
-
-LED led;
+#include "JWB_API.h"
 
 void setup() {
-  // Put your setup code here, to run once.
+  // put your setup code here, to run once:
+  breathe_all(1);
 }
 
 void loop() {
-  // Put your main code here, to run repeatedly:
-  led.on(1, "blue", 650);
+  // put your main code here, to run repeatedly:
+  Animation animation;
+  animation.jewelbots_logo();
+}
+
+void button_press() {
+  // put code here to run whenever the Magic Button is pressed:
+  Animation animation;
+  animation.breathe_single_color(BLUE);
 }
 ```
 
