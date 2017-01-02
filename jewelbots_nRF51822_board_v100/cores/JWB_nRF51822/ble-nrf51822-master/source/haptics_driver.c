@@ -143,6 +143,20 @@ unsigned char haptics_msg_long(void) {
   return 0;
 }
 
+unsigned char haptics_msg(uint32_t len) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_SendWaveform(MsgLong, ACTUATOR_LRA, TRIGGER_INTERNAL);
+  // we could put a check in here for a max
+  uint32_t scaled_len = APP_TIMER_TICKS(len, APP_TIMER_PRESCALER);
+  uint32_t err_code = app_timer_start(haptics_timer_id, scaled_len, NULL);
+  APP_ERROR_CHECK(err_code);
+  return 0;
+}
 
 
 #ifdef __cplusplus

@@ -16,6 +16,7 @@ unsigned char haptics_test_run3(void);
 unsigned char haptics_test_run4(void);
 unsigned char haptics_msg_short(void);
 unsigned char haptics_msg_long(void);
+unsigned char haptics_msg(uint32_t);
 
 
 #ifdef __cplusplus
