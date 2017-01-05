@@ -14,9 +14,12 @@ unsigned char haptics_test_run1(void);
 unsigned char haptics_test_run2(void);
 unsigned char haptics_test_run3(void);
 unsigned char haptics_test_run4(void);
+unsigned char haptics_msg_extra_short(void);
 unsigned char haptics_msg_short(void);
+unsigned char haptics_msg_medium(void);
 unsigned char haptics_msg_long(void);
-
+unsigned char haptics_msg_extra_long(void);
+unsigned char haptics_msg_really_long(void);
 
 #ifdef __cplusplus
 }

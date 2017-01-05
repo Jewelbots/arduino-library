@@ -36,8 +36,12 @@ extern const Waveform TestClick;
 extern const Waveform TestBuzz;
 extern const Waveform LifeTestBuzz;
 extern const Waveform LifeTestContinuousBuzz;
+extern const Waveform MsgExtraShort;
 extern const Waveform MsgShort;
+extern const Waveform MsgMedium;
 extern const Waveform MsgLong;
+extern const Waveform MsgExtraLong;
+extern const Waveform MsgReallyLong;
 //--------------------------------------------------------//
 // PWM Mode Examples
 //--------------------------------------------------------//

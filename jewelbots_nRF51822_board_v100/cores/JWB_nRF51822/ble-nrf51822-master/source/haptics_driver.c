@@ -17,8 +17,12 @@ extern "C"{
 #define BUZZALERT_TIMEOUT APP_TIMER_TICKS(790, APP_TIMER_PRESCALER)
 #define DOUBLESTRONGCLICK_TIMEOUT APP_TIMER_TICKS(170, APP_TIMER_PRESCALER)
 #define PULSINGALERT_TIMEOUT APP_TIMER_TICKS(380, APP_TIMER_PRESCALER)
+#define MSGEXTRASHORT_TIMEOUT APP_TIMER_TICKS(125, APP_TIMER_PRESCALER)
 #define MSGSHORT_TIMEOUT APP_TIMER_TICKS(250, APP_TIMER_PRESCALER)
+#define MSGMEDIUM_TIMEOUT APP_TIMER_TICKS(500, APP_TIMER_PRESCALER)
 #define MSGLONG_TIMEOUT APP_TIMER_TICKS(750, APP_TIMER_PRESCALER)
+#define MSGEXTRALONG_TIMEOUT APP_TIMER_TICKS(1000, APP_TIMER_PRESCALER)
+#define MSGREALLYLONG_TIMEOUT APP_TIMER_TICKS(1500, APP_TIMER_PRESCALER)
 
 APP_TIMER_DEF(haptics_timer_id);
 
@@ -117,6 +121,19 @@ unsigned char haptics_test_run4(void) {
 	return 0;
 }
 
+unsigned char haptics_msg_extra_short(void) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_SendWaveform(MsgExtraShort, ACTUATOR_LRA, TRIGGER_INTERNAL);
+  uint32_t err_code = app_timer_start(haptics_timer_id, MSGEXTRASHORT_TIMEOUT, NULL);
+  APP_ERROR_CHECK(err_code);
+  return 0;
+}
+
 unsigned char haptics_msg_short(void) {
 #ifdef PMIC
   bool battery_is_charging = pmic_is_charging();
@@ -130,6 +147,19 @@ unsigned char haptics_msg_short(void) {
   return 0;
 }
 
+unsigned char haptics_msg_medium(void) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_SendWaveform(MsgMedium, ACTUATOR_LRA, TRIGGER_INTERNAL);
+  uint32_t err_code = app_timer_start(haptics_timer_id, MSGMEDIUM_TIMEOUT, NULL);
+  APP_ERROR_CHECK(err_code);
+  return 0;
+}
+
 unsigned char haptics_msg_long(void) {
 #ifdef PMIC
   bool battery_is_charging = pmic_is_charging();
@@ -139,6 +169,32 @@ unsigned char haptics_msg_long(void) {
 #endif
   Haptics_SendWaveform(MsgLong, ACTUATOR_LRA, TRIGGER_INTERNAL);
   uint32_t err_code = app_timer_start(haptics_timer_id, MSGLONG_TIMEOUT, NULL);
+  APP_ERROR_CHECK(err_code);
+  return 0;
+}
+
+unsigned char haptics_msg_extra_long(void) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_SendWaveform(MsgExtraLong, ACTUATOR_LRA, TRIGGER_INTERNAL);
+  uint32_t err_code = app_timer_start(haptics_timer_id, MSGEXTRALONG_TIMEOUT, NULL);
+  APP_ERROR_CHECK(err_code);
+  return 0;
+}
+
+unsigned char haptics_msg_really_long(void) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_SendWaveform(MsgReallyLong, ACTUATOR_LRA, TRIGGER_INTERNAL);
+  uint32_t err_code = app_timer_start(haptics_timer_id, MSGREALLYLONG_TIMEOUT, NULL);
   APP_ERROR_CHECK(err_code);
   return 0;
 }

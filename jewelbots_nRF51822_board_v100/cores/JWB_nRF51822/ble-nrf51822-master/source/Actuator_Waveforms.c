@@ -111,13 +111,29 @@ static const unsigned char LifeTestContinuousBuzz_data[] = {
 const Waveform LifeTestContinuousBuzz = {MODE_RAM, 4,
                                          LifeTestContinuousBuzz_data};
 
-static const unsigned char MsgShort_data[] = {DRV260x_WAVEFORMSEQ1, 0x13,
+static const unsigned char MsgExtraShort_data[] = {DRV260x_WAVEFORMSEQ1, 0x13,
+                                              DRV260x_WAVEFORMSEQ2, 0x00};
+const Waveform MsgExtraShort = {MODE_RAM, 4, MsgExtraShort_data};
+
+static const unsigned char MsgShort_data[] = {DRV260x_WAVEFORMSEQ1, 0x14,
                                               DRV260x_WAVEFORMSEQ2, 0x00};
 const Waveform MsgShort = {MODE_RAM, 4, MsgShort_data};
 
-static const unsigned char MsgLong_data[] = {DRV260x_WAVEFORMSEQ1, 0x14,
+static const unsigned char MsgMedium_data[] = {DRV260x_WAVEFORMSEQ1, 0x15,
+                                              DRV260x_WAVEFORMSEQ2, 0x00};
+const Waveform MsgMedium = {MODE_RAM, 4, MsgMedium_data};
+
+static const unsigned char MsgLong_data[] = {DRV260x_WAVEFORMSEQ1, 0x16,
                                              DRV260x_WAVEFORMSEQ2, 0x00};
 const Waveform MsgLong = {MODE_RAM, 4, MsgLong_data};
+
+static const unsigned char MsgExtraLong_data[] = {DRV260x_WAVEFORMSEQ1, 0x17,
+                                             DRV260x_WAVEFORMSEQ2, 0x00};
+const Waveform MsgExtraLong = {MODE_RAM, 4, MsgExtraLong_data};
+
+static const unsigned char MsgReallyLong_data[] = {DRV260x_WAVEFORMSEQ1, 0x18,
+                                             DRV260x_WAVEFORMSEQ2, 0x00};
+const Waveform MsgReallyLong = {MODE_RAM, 4, MsgReallyLong_data};
 
 //--------------------------------------------------------//
 // PWM Mode Examples

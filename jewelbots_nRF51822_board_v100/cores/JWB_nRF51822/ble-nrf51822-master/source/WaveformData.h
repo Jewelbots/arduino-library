@@ -9,8 +9,8 @@
  ******************************************************************************/
 #ifndef WAVEFORM_DATA_H
 #define WAVEFORM_DATA_H
-#define DRV2604_HEADERSIZE 62
-#define DRV2604_DATASIZE 71
+#define DRV2604_HEADERSIZE 74
+#define DRV2604_DATASIZE 91
 
 // Header Info
 extern const unsigned char DRV2604_HEADER[]; // DRV2667 RAM Header Information
