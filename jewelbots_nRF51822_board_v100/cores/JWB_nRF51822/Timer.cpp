@@ -33,6 +33,11 @@ extern "C"{
     return num_ticks = ((uint32_t)ROUNDED_DIV((milliseconds) * (uint64_t)APP_TIMER_CLOCK_FREQ, ((APP_TIMER_PRESCALER) + 1) * 1000));
   }
 
+  static uint32_t convert_ticks_ms(uint32_t num_ticks){
+    uint32_t milliseconds;
+    return milliseconds = ((uint32_t)ROUNDED_DIV((num_ticks) * (uint64_t)(((APP_TIMER_PRESCALER) + 1) * 1000),(uint64_t)APP_TIMER_CLOCK_FREQ));
+  }
+
   void arduino_timer_init(void) {
     uint32_t err_code;
     err_code = app_timer_create(&pause_timer_id, APP_TIMER_MODE_SINGLE_SHOT, pause_timeout_handler);
@@ -56,5 +61,10 @@ extern "C"{
     }
   }
 
+  uint32_t Timer::millis(void) {
+    uint32_t num_ticks;
+    app_timer_cnt_get(&num_ticks); // TODO What to do with returned status?
 
+    return convert_ticks_ms(num_ticks);
+  }
 }
