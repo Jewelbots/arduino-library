@@ -12,7 +12,7 @@ extern "C"{
     Timer();
     ~Timer();
     void pause(uint32_t milliseconds);
-
+    uint32_t millis(void);
 
   };
 } // extern "C"
