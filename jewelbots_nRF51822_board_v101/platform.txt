@@ -3,7 +3,6 @@
 # -------------------------
 
 name=Jewelbots Boards
-version=1.0.0
 
 # Compile tool path
 compiler.path={runtime.tools.arm-none-eabi-gcc-4.8.3-2014q1.path}/bin/
