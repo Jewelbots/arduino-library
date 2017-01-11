@@ -26,12 +26,18 @@ extern "C"{
 
 APP_TIMER_DEF(haptics_timer_id);
 
+static bool RTP_mode = false;
+
 static void haptics_timeout_handler(void *p_context) {
 
   UNUSED_PARAMETER(p_context);
   uint32_t err_code;
   err_code = app_timer_stop(haptics_timer_id);
   APP_ERROR_CHECK(err_code);
+  if (RTP_mode){
+    Haptics_Stop_RTP();
+    RTP_mode = false;
+  }
   haptics_standby();
   haptics_disable();
 }
@@ -199,7 +205,20 @@ unsigned char haptics_msg_really_long(void) {
   return 0;
 }
 
-
+unsigned char haptics_custom(uint8_t amplitude, uint32_t duration) {
+#ifdef PMIC
+  bool battery_is_charging = pmic_is_charging();
+  if (battery_is_charging) {
+    return 0; //  Don't activate the motor if the battery charging
+  }
+#endif
+  Haptics_Start_RTP(amplitude);
+  uint32_t custom_timeout = APP_TIMER_TICKS(duration, APP_TIMER_PRESCALER);
+  uint32_t err_code = app_timer_start(haptics_timer_id, custom_timeout, NULL);
+  APP_ERROR_CHECK(err_code);
+  RTP_mode = true;
+  return 0;
+}
 
 #ifdef __cplusplus
 }

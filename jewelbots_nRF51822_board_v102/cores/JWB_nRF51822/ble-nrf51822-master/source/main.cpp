@@ -139,7 +139,6 @@ int main(void) {
   err_code = NRF_LOG_INIT();
   APP_ERROR_CHECK(err_code);
   timers_init();
-  arduino_timer_init();
   scheduler_init();
   twi_init();
   pmic_init();
@@ -157,6 +156,7 @@ int main(void) {
   err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
   APP_ERROR_CHECK(err_code);
   boot_up_led_sequence();
+  arduino_timer_init();
   // Run additional init from the setup function
   setup();
   // Main loop

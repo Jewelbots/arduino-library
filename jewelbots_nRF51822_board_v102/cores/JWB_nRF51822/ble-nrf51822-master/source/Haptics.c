@@ -267,6 +267,28 @@ void Haptics_SendWaveform(const Waveform waveform, const uint8_t actuator,
   }
 }
 
+void Haptics_Start_RTP(uint8_t amplitude){
+  if (playEffect) {
+    actuatorType = ACTUATOR_LRA; // Set actuator type
+    triggerType = TRIGGER_INTERNAL;   // Set trigger type
+
+    Haptics_EnableAmplifier();
+		Haptics_Active();
+    Haptics_SendTriggerType(); // Send trigger type to DRV260x
+    Haptics_SendActuatorSettings(); // Send actuator settings to DRV260x
+
+    Haptics_DisableTriggerActive(); // Stop waveform playback
+
+    I2C_WriteSingleByte(DRV260x_MODE, RTP); // Set RTP Mode
+
+    I2C_WriteSingleByte(DRV260x_RTP, amplitude);
+  }
+}
+
+void Haptics_Stop_RTP() {
+  I2C_WriteSingleByte(DRV260x_RTP, 0x0);
+}
+
 /**
  * Haptics_SendWaveform - send haptic waveform
  * @param struct Waveform - the waveform output type, length in bytes, and data
@@ -638,7 +660,7 @@ void Haptics_EnableAmplifier(void) { nrf_gpio_pin_set(DRV2604_ENABLE_PIN); }
 void Haptics_DisableAmplifier(void) { nrf_gpio_pin_clear(DRV2604_ENABLE_PIN); }
 
 void Haptics_Active(void) { I2C_WriteSingleByte(DRV260x_MODE, ACTIVE); }
-void Haptics_Standby(void) { I2C_WriteSingleByte(DRV260x_MODE, STANDBY); }
+void Haptics_Standby(void) { I2C_WriteSingleByte(DRV260x_MODE, STANDBY | Int_Trig); }
 
 /**
  * Haptics_SetDisabledAllowed

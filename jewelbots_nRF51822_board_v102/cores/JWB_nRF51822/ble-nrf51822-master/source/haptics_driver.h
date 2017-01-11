@@ -20,6 +20,7 @@ unsigned char haptics_msg_medium(void);
 unsigned char haptics_msg_long(void);
 unsigned char haptics_msg_extra_long(void);
 unsigned char haptics_msg_really_long(void);
+unsigned char haptics_custom(uint8_t amplitude, uint32_t duration);
 
 #ifdef __cplusplus
 }

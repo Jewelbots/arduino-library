@@ -256,6 +256,9 @@ void Haptics_DisableAmplifier(void);
 void Haptics_Active(void);
 void Haptics_Standby(void);
 
+void Haptics_Start_RTP(uint8_t amplitude);
+void Haptics_Stop_RTP(void);
+
 /**
  * Haptics_SetDisabledAllowed
  * @return disabledAllowed - unsigned char - 0 = disabled not allowed, 1 =
