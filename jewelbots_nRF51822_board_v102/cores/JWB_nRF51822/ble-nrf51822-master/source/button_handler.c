@@ -74,6 +74,8 @@ static void button_handler(uint8_t button, uint8_t action) {
       }
     } else {
       if (total_ticks > BUTTON_PRESS_DFU_TICKS) {
+        haptics_standby();
+        haptics_disable();
         signal_power_down();
         sd_power_system_off();
       } else if (total_ticks > BUTTON_PRESS_LONG_TICKS) {

@@ -21,7 +21,7 @@ extern "C"{
 
 #define APP_COMPANY_IDENTIFIER 0x213
 //#define APP_COMPANY_IDENTIFIER					 0x0CCC
-#define APP_ADV_INTERVAL   MSEC_TO_UNITS(80, UNIT_0_625_MS)
+#define APP_ADV_INTERVAL   MSEC_TO_UNITS(160, UNIT_0_625_MS)
 #define APP_ADV_TIMEOUT_IN_SECONDS 5
 	/**< The advertising timeout in units of seconds. */
 
