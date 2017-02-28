@@ -58,7 +58,29 @@
                     "architecture": "nRF51822",
                     "version": "1.0.2",
                     "category": "Contributed",
-                    "url": "https://github.com/Jewelbots/arduino-library/releases/download/v1.02/jewelbots_nRF51822_board_v102.tar.gz",
+                    "url": "https://github.com/Jewelbots/arduino-library/releases/download/v1.02/jewelbots_nRF51822_board_v103.tar.gz",
+                    "archiveFileName": "jewelbots_nRF51822_board_v103.tar.gz",
+                    "size": "3100000",
+                    "boards":
+                    [
+                        {"name": "Jewelbots nRF51822"}
+
+                    ],
+                    "toolsDependencies":
+                    [
+                        {
+                            "packager": "arduino",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "4.8.3-2014q1"
+                        }
+                    ]
+                },
+                {
+                    "name": "Jewelbots Arduino Library",
+                    "architecture": "nRF51822",
+                    "version": "1.0.3",
+                    "category": "Contributed",
+                    "url": "https://github.com/Jewelbots/arduino-library/releases/download/v1.03/jewelbots_nRF51822_board_v102.tar.gz",
                     "archiveFileName": "jewelbots_nRF51822_board_v102.tar.gz",
                     "size": "3100000",
                     "boards":
