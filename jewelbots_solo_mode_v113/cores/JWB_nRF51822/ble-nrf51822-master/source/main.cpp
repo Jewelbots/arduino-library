@@ -1,6 +1,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
+
 #include "advertising.h"
 #include "app_button.h"
 #include "app_error.h"
@@ -44,6 +49,10 @@
 #include "led_sequence.h"
 #include "pmic_driver.h"
 #include "scan.h"
+
+#ifdef __cplusplus
+}
+#endif
 
 // Arduino
 #include "Arduino.h"
@@ -164,7 +173,7 @@ int main(void) {
     display_charging();
     app_sched_execute();
     // Skip the user loop code if the Jewelbot is charging
-    if (!pmic_5V_present()) {
+    if (!pmic_5V_present() || get_run_loop_charging()) {
       //Run Arduino loop function
       loop();
     }

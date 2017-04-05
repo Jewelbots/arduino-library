@@ -4,7 +4,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <string.h>
+#include <stdarg.h>
 #include <math.h>
 
 
@@ -35,7 +37,7 @@
 #include "nrf_drv_twi.h"
 #include "nrf_drv_wdt.h"
 #include "nrf_gpio.h"
-#include "nrf_log.h"
+
 #include "nrf_soc.h"
 #include "softdevice_handler_appsh.h"
 // application
@@ -51,17 +53,19 @@
 #include "led_sequence.h"
 #include "pmic_driver.h"
 #include "scan.h"
+#include "utils.h"
 // Arduino specific code
 #include "LED.h"
 #include "Buzzer.h"
 #include "Animation.h"
 #include "Timer.h"
+#include "JWB_Serial.h"
 
 
 #ifdef __cplusplus
 extern "C"{
 #endif // __cplusplus
-
+#include "nrf_log.h"
 /* sketch */
 extern void setup( void ) ;
 extern void loop( void ) ;
