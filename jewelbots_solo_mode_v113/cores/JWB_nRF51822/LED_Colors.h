@@ -6,7 +6,7 @@
 extern "C"{
  // __cplusplus
 
-enum ColorLabel { OFF = 0, RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4, MAGENTA = 5, CYAN = 6, WHITE = 7 };
+enum ColorLabel { OFF = 0, RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4, MAGENTA = 5, CYAN = 6, WHITE = 7, ORANGE = 8 };
 
 
 struct Color
@@ -29,7 +29,8 @@ const Color COLORS[8] = {
   Color( 0x3F, 0x3F, 0x00 ), // Yellow
   Color( 0x3F, 0x00, 0x3F ), // Magenta
   Color( 0x00, 0x3F, 0x3F ), // Cyan
-  Color( 0x3F, 0x3F, 0x3F ) // White
+  Color( 0x3F, 0x3F, 0x3F ), // White
+  Color( 0xFF, 0x45, 0x00) //Orange
 };
 
 

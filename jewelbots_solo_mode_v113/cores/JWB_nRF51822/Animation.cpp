@@ -8,6 +8,7 @@
 #include "jewelbot_gpio.h"
 #include "led_driver.h"
 #include "nordic_common.h"
+#include "Buzzer.h"
 #include "nrf.h"
 #include "nrf_delay.h"
 #include "nrf_gpio.h"
@@ -294,6 +295,22 @@ void Animation::rainbows(void){
       set_led_state_handler(&pink);
       animation_timer.pause(delay);
       set_led_state_handler(&magenta);
+      animation_timer.pause(delay);
+    }
+    clear_led();
+    disable_led();
+}
+
+
+void Animation::reject(void){
+    Buzzer buzz;
+    enable_led();
+    clear_led();
+    led_cmd_t red = {0, 0x3F, 0x00, 0x00, 1};
+    int delay = 300;
+    for (int i = 0; i < 3; i++) {
+      set_led_state_handler(&red);
+      buzz.short_buzz();
       animation_timer.pause(delay);
     }
     clear_led();
