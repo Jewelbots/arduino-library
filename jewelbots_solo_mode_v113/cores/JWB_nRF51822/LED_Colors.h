@@ -21,7 +21,7 @@ struct Color
   uint8_t r, g, b;
 };
 
-const Color COLORS[14] = {
+const Color COLORS[15] = {
   Color( 0x00, 0x00, 0x00 ), // Off
   Color( 0x3F, 0x00, 0x00 ), // Red
   Color( 0x00, 0x3F, 0x00 ), // Green
