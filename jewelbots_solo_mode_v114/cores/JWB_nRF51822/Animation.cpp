@@ -16,6 +16,7 @@
 #include <stdint.h>
 #include <string.h>
 #include "Arduino.h"
+#include "JWB_Utils.h"
 
 
 #ifdef __cplusplus
@@ -298,6 +299,53 @@ void Animation::rainbows(void){
     }
     clear_led();
     disable_led();
+}
+ 
+
+void Animation::bouncing_ball(void){
+
+  enable_led();
+  clear_led();
+  int rand = get_random_int(1,4);
+  led_cmd_t led1;
+  led_cmd_t led2;
+  led_cmd_t led3;
+  led_cmd_t led4;
+  int delay = 300;
+
+  if(rand == 1){
+  led1 = {0, 0x3F, 0x0C, 0x3F, 1};
+  led2 = {1, 0x20, 0xB2, 0x50, 1};
+  led3 = {2, 0x20, 0xB2, 0x50, 1};
+  led4 = {3, 0x20, 0xB2, 0x50, 1};
+  }
+  if(rand == 2){
+  led1 = {1, 0x3F, 0x0C, 0x3F, 1};
+  led2 = {0, 0x20, 0xB2, 0x50, 1};
+  led3 = {2, 0x20, 0xB2, 0x50, 1};
+  led4 = {3, 0x20, 0xB2, 0x50, 1};
+  }
+  if(rand == 3){
+  led1 = {2, 0x3F, 0x0C, 0x3F, 1};
+  led2 = {1, 0x20, 0xB2, 0x50, 1};
+  led3 = {0, 0x20, 0xB2, 0x50, 1};
+  led4 = {3, 0x20, 0xB2, 0x50, 1};
+  }
+  if(rand == 4){
+  led1 = {3, 0x3F, 0x0C, 0x3F, 1};
+  led2 = {1, 0x20, 0xB2, 0x50, 1};
+  led3 = {2, 0x20, 0xB2, 0x50, 1};
+  led4 = {0, 0x20, 0xB2, 0x50, 1};
+  }
+
+  set_led_state_handler(&led1);
+  set_led_state_handler(&led2);
+  set_led_state_handler(&led3);
+  set_led_state_handler(&led4);
+  animation_timer.pause(delay);
+
+  clear_led();
+  disable_led();
 }
 #ifdef __cplusplus
 } // extern "C"
