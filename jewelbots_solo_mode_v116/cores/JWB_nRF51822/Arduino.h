@@ -55,6 +55,7 @@
 #include "scan.h"
 #include "utils.h"
 // Arduino specific code
+#include "JWB_Utils.h"
 #include "LED.h"
 #include "Buzzer.h"
 #include "Animation.h"
