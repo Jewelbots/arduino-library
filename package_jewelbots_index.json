@@ -168,7 +168,7 @@
                     "architecture": "nRF51822",
                     "version": "1.1.5",
                     "category": "Contributed",
-                    "url": "https://github.com/Jewelbots/arduino-library/releases/download/v1.1.5/jewelbots_solo_mode_v115.tar.gz",
+                    "url": "https://s3-us-west-2.amazonaws.com/solo-board/jewelbots_solo_mode_v115.tar.gz",
                     "archiveFileName": "jewelbots_solo_mode_v115.tar.gz",
                     "size": "3100000",
                     "boards":
