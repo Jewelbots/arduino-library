@@ -18,6 +18,7 @@ class Animation {
     void breathe_single_color(ColorLabel color);
     void jewelbots_logo(void);
     void rainbows(void);
+    void bouncing_ball(void);
  };
 
  #ifdef __cplusplus
