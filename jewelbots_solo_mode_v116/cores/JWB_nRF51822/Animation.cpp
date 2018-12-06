@@ -107,6 +107,96 @@ extern "C"{
         led3.b = led3.b + 1;
         led4.b = led4.b + 1;
       }
+	  if (color == ORANGE) {
+        led1.r = led1.r + 7;
+        led2.r = led2.r + 7;
+        led3.r = led3.r + 7;
+        led4.r = led4.r + 7;
+        led1.g = led1.g + 2;
+        led2.g = led2.g + 2;
+        led3.g = led3.g + 2;
+        led4.g = led4.g + 2;
+	  }
+	  if (color == GOLD) {
+        led1.r = led1.r + 7;
+        led2.r = led2.r + 7;
+        led3.r = led3.r + 7;
+        led4.r = led4.r + 7;
+        led1.g = led1.g + 4;
+        led2.g = led2.g + 4;
+        led3.g = led3.g + 4;
+        led4.g = led4.g + 4;
+	  }
+	  if (color == PURPLE) {
+        led1.r = led1.r + 7;
+        led2.r = led2.r + 7;
+        led3.r = led3.r + 7;
+        led4.r = led4.r + 7;
+        led1.g = led1.g + 4;
+        led2.g = led2.g + 4;
+        led3.g = led3.g + 4;
+        led4.g = led4.g + 4;
+        led1.b = led1.b + 7;
+        led2.b = led2.b + 7;
+        led3.b = led3.b + 7;
+        led4.b = led4.b + 7;
+	  }
+	  if (color == PERIWINKLE) {
+        led1.r = led1.r + 7;
+        led2.r = led2.r + 7;
+        led3.r = led3.r + 7;
+        led4.r = led4.r + 7;
+        led1.g = led1.g + 4;
+        led2.g = led2.g + 4;
+        led3.g = led3.g + 4;
+        led4.g = led4.g + 4;
+        led1.b = led1.b + 3;
+        led2.b = led2.b + 3;
+        led3.b = led3.b + 3;
+        led4.b = led4.b + 3;
+	  }
+	  if (color == ROSE) {
+        led1.r = led1.r + 5;
+        led2.r = led2.r + 5;
+        led3.r = led3.r + 5;
+        led4.r = led4.r + 5;
+        led1.g = led1.g + 1;
+        led2.g = led2.g + 1;
+        led3.g = led3.g + 1;
+        led4.g = led4.g + 1;
+        led1.b = led1.b + 1;
+        led2.b = led2.b + 1;
+        led3.b = led3.b + 1;
+        led4.b = led4.b + 1;
+	  }
+	  if (color == OCEAN) {
+        led1.r = led1.r + 1;
+        led2.r = led2.r + 1;
+        led3.r = led3.r + 1;
+        led4.r = led4.r + 1;
+        led1.g = led1.g + 5;
+        led2.g = led2.g + 5;
+        led3.g = led3.g + 5;
+        led4.g = led4.g + 5;
+        led1.b = led1.b + 2;
+        led2.b = led2.b + 2;
+        led3.b = led3.b + 2;
+        led4.b = led4.b + 2;
+	  }
+	  if (color == SKY) {
+        led1.r = led1.r + 3;
+        led2.r = led2.r + 3;
+        led3.r = led3.r + 3;
+        led4.r = led4.r + 3;
+        led1.g = led1.g + 4;
+        led2.g = led2.g + 4;
+        led3.g = led3.g + 4;
+        led4.g = led4.g + 4;
+        led1.b = led1.b + 7;
+        led2.b = led2.b + 7;
+        led3.b = led3.b + 7;
+        led4.b = led4.b + 7;
+	  }
       set_led_state_handler(&led1);
       set_led_state_handler(&led2);
       set_led_state_handler(&led3);
@@ -176,6 +266,96 @@ extern "C"{
         led3.b = led3.b - 1;
         led4.b = led4.b - 1;
       }
+	  if (color == ORANGE) {
+        led1.r = led1.r - 7;
+        led2.r = led2.r - 7;
+        led3.r = led3.r - 7;
+        led4.r = led4.r - 7;
+        led1.g = led1.g - 2;
+        led2.g = led2.g - 2;
+        led3.g = led3.g - 2;
+        led4.g = led4.g - 2;
+	  }
+	  if (color == GOLD) {
+        led1.r = led1.r - 7;
+        led2.r = led2.r - 7;
+        led3.r = led3.r - 7;
+        led4.r = led4.r - 7;
+        led1.g = led1.g - 4;
+        led2.g = led2.g - 4;
+        led3.g = led3.g - 4;
+        led4.g = led4.g - 4;
+	  }
+	  if (color == PURPLE) {
+        led1.r = led1.r - 7;
+        led2.r = led2.r - 7;
+        led3.r = led3.r - 7;
+        led4.r = led4.r - 7;
+        led1.g = led1.g - 4;
+        led2.g = led2.g - 4;
+        led3.g = led3.g - 4;
+        led4.g = led4.g - 4;
+        led1.b = led1.b - 7;
+        led2.b = led2.b - 7;
+        led3.b = led3.b - 7;
+        led4.b = led4.b - 7;
+	  }
+	  if (color == PERIWINKLE) {
+        led1.r = led1.r - 7;
+        led2.r = led2.r - 7;
+        led3.r = led3.r - 7;
+        led4.r = led4.r - 7;
+        led1.g = led1.g - 4;
+        led2.g = led2.g - 4;
+        led3.g = led3.g - 4;
+        led4.g = led4.g - 4;
+        led1.b = led1.b - 3;
+        led2.b = led2.b - 3;
+        led3.b = led3.b - 3;
+        led4.b = led4.b - 3;
+	  }
+	  if (color == ROSE) {
+        led1.r = led1.r - 5;
+        led2.r = led2.r - 5;
+        led3.r = led3.r - 5;
+        led4.r = led4.r - 5;
+        led1.g = led1.g - 1;
+        led2.g = led2.g - 1;
+        led3.g = led3.g - 1;
+        led4.g = led4.g - 1;
+        led1.b = led1.b - 1;
+        led2.b = led2.b - 1;
+        led3.b = led3.b - 1;
+        led4.b = led4.b - 1;
+	  }
+	  if (color == OCEAN) {
+        led1.r = led1.r - 1;
+        led2.r = led2.r - 1;
+        led3.r = led3.r - 1;
+        led4.r = led4.r - 1;
+        led1.g = led1.g - 5;
+        led2.g = led2.g - 5;
+        led3.g = led3.g - 5;
+        led4.g = led4.g - 5;
+        led1.b = led1.b - 2;
+        led2.b = led2.b - 2;
+        led3.b = led3.b - 2;
+        led4.b = led4.b - 2;
+	  }
+	  if (color == SKY) {
+        led1.r = led1.r - 3;
+        led2.r = led2.r - 3;
+        led3.r = led3.r - 3;
+        led4.r = led4.r - 3;
+        led1.g = led1.g - 4;
+        led2.g = led2.g - 4;
+        led3.g = led3.g - 4;
+        led4.g = led4.g - 4;
+        led1.b = led1.b - 7;
+        led2.b = led2.b - 7;
+        led3.b = led3.b - 7;
+        led4.b = led4.b - 7;
+	  }
       set_led_state_handler(&led1);
       set_led_state_handler(&led2);
       set_led_state_handler(&led3);
