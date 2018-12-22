@@ -206,6 +206,28 @@
                             "version": "4.8.3-2014q1"
                         }
                     ]
+                },
+                   {
+                    "name": "Jewelbots Arduino Library",
+                    "architecture": "nRF51822",
+                    "version": "1.1.7",
+                    "category": "Contributed",
+                    "url": "https://s3-us-west-2.amazonaws.com/solo-board/jewelbots_solo_mode_v117.tar.gz",
+                    "archiveFileName": "jewelbots_solo_mode_v117.tar.gz",
+                    "size": "3100000",
+                    "boards":
+                    [
+                        {"name": "Jewelbots nRF51822"}
+
+                    ],
+                    "toolsDependencies":
+                    [
+                        {
+                            "packager": "arduino",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "4.8.3-2014q1"
+                        }
+                    ]
                 }
             ],
             "tools":
