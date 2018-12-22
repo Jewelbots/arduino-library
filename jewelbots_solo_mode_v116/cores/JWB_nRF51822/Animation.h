@@ -19,6 +19,7 @@ class Animation {
     void jewelbots_logo(void);
     void rainbows(void);
     void bouncing_ball(void);
+    void christmas(void);
  };
 
  #ifdef __cplusplus
