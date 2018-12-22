@@ -526,6 +526,34 @@ void Animation::bouncing_ball(void){
   clear_led();
   disable_led();
 }
+	
+void Animation::christmas(void)
+{
+    enable_led();
+    clear_led();
+    // enable_led();
+    led_cmd_t led1 = {3, 0x3f, 0x00, 0x00, 1};
+    led_cmd_t led2 = {1, 0x3f, 0x00, 0x00, 1};
+    led_cmd_t led3 = {2, 0x00, 0x3f, 0x00, 1};
+    led_cmd_t led4 = {0, 0x00, 0x3f, 0x00, 1};
+    set_led_state_handler(&led1);
+    set_led_state_handler(&led2);
+    set_led_state_handler(&led3);
+    set_led_state_handler(&led4);
+    animation_timer.pause(400);
+    led1 = {2, 0x3f, 0x00, 0x00, 1};
+    led2 = {0, 0x3f, 0x00, 0x00, 1};
+    led3 = {3, 0x00, 0x3f, 0x00, 1};
+    led4 = {1, 0x00, 0x3f, 0x00, 1};
+    set_led_state_handler(&led1);
+    set_led_state_handler(&led2);
+    set_led_state_handler(&led3);
+    set_led_state_handler(&led4);
+    animation_timer.pause(400);
+    clear_led();
+    disable_led();
+}
+	
 #ifdef __cplusplus
 } // extern "C"
 #endif // __cplusplus
